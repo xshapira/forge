@@ -1,0 +1,13 @@
+{
+  "scripts": {
+    "serve": "vuepress dev",
+    "build": "vuepress build"
+  },
+  "devDependencies": {
+    "vuepress": "^1.1.0"
+  },
+  "name": "docs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT"
+}
