@@ -2,7 +2,7 @@
 .idea/
 *.env
 
-##### FORONTEND IGNORES #####
+##### FORINTEND IGNORES #####
 frontend/node_modules
 node_modules
 frontend/yarn.lock

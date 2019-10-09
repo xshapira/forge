@@ -13,7 +13,6 @@ import os
 import environ
 from django.utils.translation import ugettext_lazy as _
 
-
 ########################
 # ENVIRONMENT SETTINGS #
 ########################
