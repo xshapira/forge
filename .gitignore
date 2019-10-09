@@ -1,4 +1,13 @@
+##### BASE IGNORES #####
+.idea/
+*.env
+
+##### FORINTEND IGNORES #####
+frontend/node_modules
 node_modules
 frontend/yarn.lock
 docs/yarn.lock
 docs/.vuepress/dist/*
+
+##### BACKEND IGNORES #####
+backend/.data
