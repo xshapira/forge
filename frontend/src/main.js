@@ -3,7 +3,11 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 
+// Styles
 import './assets/css/main.postcss'
+
+// Plugins
+import './plugins/vueAxe'
 
 Vue.config.productionTip = false
 
