@@ -10,4 +10,6 @@ docs/yarn.lock
 docs/.vuepress/dist/*
 
 ##### BACKEND IGNORES #####
+*.pyc
 backend/.data
+backend/.venv
