@@ -217,6 +217,7 @@ module.exports = {
       '750': '750ms',
       '1000': '1000ms',
     },
+    // perhaps add from here: https://easings.net/en#
     transitionTimingFunction: {
       // defaults to these values
       default: 'ease',
