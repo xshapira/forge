@@ -1,8 +1,8 @@
 <template>
   <div class="toggle">
     <button
-      class="toggle__btn"
-      :class="[{ 'block w-full border-b bg-blue-200': isBlock }, classButton]"
+      class="toggle__btn btn"
+      :class="[{ 'block w-full': isBlock }, classButton]"
       @click="toggle"
     >
       <slot></slot>

@@ -2,9 +2,9 @@
   <div id="app">
     <header class="py-6 bg-gray-200">
       <div class="container">
-        <div class="flex justify-center">
-          <router-link to="/">Home</router-link> |
-          <router-link to="/about">About</router-link>
+        <div class="flex justify-between">
+          <router-link to="/">Home</router-link>
+          <router-link to="/styleguide">Styleguide</router-link>
         </div>
       </div>
     </header>
