@@ -199,6 +199,7 @@ module.exports = {
     transitionProperty: {
       // defaults to these values
       none: 'none',
+      fill: 'fill',
       all: 'all',
       color: 'color',
       bg: 'background-color',
