@@ -9,6 +9,10 @@
       </div>
     </header>
 
+    <button class="bg-gray-600 hover:bg-gray-500 transition-1000">
+      Hover me for a lighter background
+    </button>
+
     <main class="mt-12">
       <router-view />
     </main>
