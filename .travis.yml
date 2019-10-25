@@ -2,6 +2,6 @@ before_install:
     - cd frontend
 
 language: node_js
-script: npm test:unit
+script: npm run test
 node_js:
     - 12
