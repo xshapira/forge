@@ -1,4 +1,4 @@
-# vue-starter
+# Forge Frontend
 
 ## Project setup
 ```

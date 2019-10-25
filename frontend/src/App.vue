@@ -2,16 +2,19 @@
   <div id="app">
     <header class="py-6 bg-gray-200">
       <div class="container">
-        <div class="flex justify-center">
-          <router-link to="/">Home</router-link> |
-          <router-link to="/about">About</router-link>
+        <div class="flex justify-between">
+          <router-link class="no-underline font-semibold text-lg" to="/">
+            Forge
+          </router-link>
+          <router-link
+            class="no-underline font-semibold text-lg"
+            to="/styleguide"
+          >
+            Styleguide
+          </router-link>
         </div>
       </div>
     </header>
-
-    <button class="bg-gray-600 hover:bg-gray-500 transition-1000">
-      Hover me for a lighter background
-    </button>
 
     <main class="mt-12">
       <router-view />
