@@ -376,13 +376,13 @@ module.exports = {
     textColor: theme => theme('colors'),
     transitionProperty: {
       none: 'none',
-      fill: 'fill',
       all: 'all',
-      color: 'color',
+      fill: 'fill',
       bg: 'background-color',
       border: 'border-color',
       colors: ['color', 'background-color', 'border-color'],
       opacity: 'opacity',
+      text: 'color',
       transform: 'transform',
     },
     transitionDuration: {

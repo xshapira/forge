@@ -1,3 +1,13 @@
+---
+title: Toggle
+slug: toggle
+---
+
+# Toggle
+
+## Template
+
+```vue
 <template>
   <div class="toggle">
     <button
@@ -23,28 +33,11 @@
     </transition>
   </div>
 </template>
+```
 
-<script>
-export default {
-  props: {
-    classButton: {
-      type: String,
-      default: '',
-    },
-    classBody: {
-      type: String,
-      default: '',
-    },
-  },
-  data() {
-    return {
-      collapsed: true,
-    }
-  },
-  methods: {
-    toggle() {
-      this.collapsed = !this.collapsed
-    },
-  },
-}
-</script>
+## Props
+
+| Prop name          | Type          | Default  |
+|:-------------------|:--------------|:--------|
+| class-button       | String        | ""       |
+| class-body         | String        | ""       |
