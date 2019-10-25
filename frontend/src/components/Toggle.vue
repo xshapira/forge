@@ -39,12 +39,12 @@ export default {
   data() {
     return {
       collapsed: true,
-    }
+    };
   },
   methods: {
     toggle() {
-      this.collapsed = !this.collapsed
+      this.collapsed = !this.collapsed;
     },
   },
-}
+};
 </script>
