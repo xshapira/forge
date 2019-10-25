@@ -3,3 +3,5 @@ before_install:
 
 language: node_js
 script: npm test:unit
+node_js:
+    - 12
