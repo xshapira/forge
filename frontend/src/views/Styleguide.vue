@@ -35,13 +35,13 @@
 </template>
 
 <script>
-import StyleguideSection from '@/styleguide/Section'
-import ForgeToggle from '@/components/Toggle'
+import StyleguideSection from '@/styleguide/Section';
+import ForgeToggle from '@/components/Toggle';
 
 export default {
   components: {
     StyleguideSection,
     ForgeToggle,
   },
-}
+};
 </script>
