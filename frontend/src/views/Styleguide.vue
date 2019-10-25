@@ -1,7 +1,12 @@
 <template>
   <main class="styleguide container">
-    <h1>Styleguide</h1>
-    <h2>Components</h2>
+    <!-- <h1>Styleguide</h1> -->
+
+    <styleguide-section title="Button">
+      <button class="btn">
+        Hover me for a lighter background
+      </button>
+    </styleguide-section>
 
     <styleguide-section title="Forge Toggle">
       <article>
