@@ -8,7 +8,7 @@ module.exports = {
     parser: 'babel-eslint',
   },
   rules: {
-    "vue/component-name-in-template-casing": 0
+    'vue/component-name-in-template-casing': 0,
   },
   overrides: [
     {
