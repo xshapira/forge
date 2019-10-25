@@ -1,2 +1,5 @@
+before_install:
+    - cd frontend
+
 language: node_js
 script: npm test:unit
