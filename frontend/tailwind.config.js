@@ -257,8 +257,6 @@ module.exports = {
       '2xl': '1.5rem',
       '3xl': '1.875rem',
       '4xl': '2.25rem',
-      '5xl': '3rem',
-      '6xl': '4rem',
     },
     fontWeight: {
       hairline: '100',
@@ -329,10 +327,11 @@ module.exports = {
       full: '100%',
       screen: '100vh',
     },
-    minWidth: {
+    minWidth: theme => ({
       '0': '0',
       full: '100%',
-    },
+      ...theme('spacing'),
+    }),
     objectPosition: {
       bottom: 'bottom',
       center: 'center',
@@ -374,6 +373,86 @@ module.exports = {
       current: 'currentColor',
     },
     textColor: theme => theme('colors'),
+    textStyles: theme => ({
+      heading: {
+        output: false,
+        fontWeight: theme('fontWeight.bold'),
+        lineHeight: theme('lineHeight.tight'),
+      },
+      h1: {
+        extends: 'heading',
+        fontSize: theme('fontSize.4xl'),
+      },
+      h2: {
+        extends: 'heading',
+        fontSize: theme('fontSize.3xl'),
+      },
+      h3: {
+        extends: 'heading',
+        fontSize: theme('fontSize.2xl'),
+      },
+      h4: {
+        extends: 'heading',
+        fontSize: theme('fontSize.xl'),
+      },
+      h5: {
+        extends: 'heading',
+        fontSize: theme('fontSize.lg'),
+      },
+      h6: {
+        extends: 'heading',
+        fontSize: theme('fontSize.base'),
+      },
+      link: {
+        fontWeight: theme('fontWeight.bold'),
+        color: theme('colors.red.500'),
+        '&:hover': {
+          color: theme('colors.red.700'),
+          textDecoration: 'underline',
+        },
+      },
+      richText: {
+        fontWeight: theme('fontWeight.normal'),
+        fontSize: theme('fontSize.base'),
+        lineHeight: theme('lineHeight.relaxed'),
+        '> * + *': {
+          marginTop: '1em',
+        },
+        h1: {
+          extends: 'h1',
+        },
+        h2: {
+          extends: 'h2',
+        },
+        h3: {
+          extends: 'h3',
+        },
+        h4: {
+          extends: 'h4',
+        },
+        h5: {
+          extends: 'h5',
+        },
+        h6: {
+          extends: 'h6',
+        },
+        ul: {
+          listStyleType: 'disc',
+        },
+        ol: {
+          listStyleType: 'decimal',
+        },
+        a: {
+          extends: 'link',
+        },
+        'b, strong': {
+          fontWeight: theme('fontWeight.bold'),
+        },
+        'i, em': {
+          fontStyle: 'italic',
+        },
+      },
+    }),
     transitionProperty: {
       none: 'none',
       all: 'all',
@@ -460,7 +539,16 @@ module.exports = {
       '50': '50',
     },
   },
+
   variants: {
+    textIndent: ['responsive'],
+    textShadow: ['responsive'],
+    ellipsis: ['responsive'],
+    hyphens: ['responsive'],
+    textUnset: ['responsive'],
+    caps: ['responsive'],
+    nums: ['responsive'],
+    ligatures: ['responsive'],
     accessibility: ['responsive', 'focus'],
     alignContent: ['responsive'],
     alignItems: ['responsive'],
@@ -534,5 +622,16 @@ module.exports = {
     zIndex: ['responsive'],
   },
   corePlugins: {},
-  plugins: [require('tailwindcss-transitions')()],
+  plugins: [
+    require('tailwindcss-transitions')(),
+    require('tailwindcss-typography')({
+      ellipsis: false,
+      hyphens: false,
+      textUnset: false,
+      caps: false,
+      nums: false,
+      ligatures: false,
+      componentPrefix: 'text-',
+    }),
+  ],
 };

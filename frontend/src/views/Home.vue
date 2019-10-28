@@ -1,11 +1,10 @@
 <template>
-  <div class="container">
+  <div class="container pt-12 pb-24">
     <HelloWorld msg="Welcome to Your Vue.js App" />
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
 import HelloWorld from '@/components/HelloWorld.vue';
 
 export default {
@@ -13,6 +12,5 @@ export default {
   components: {
     HelloWorld,
   },
-  methods: {},
 };
 </script>

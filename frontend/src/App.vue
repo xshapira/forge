@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <header class="py-6 bg-gray-200">
+    <header class="py-6 bg-gray-100">
       <div class="container">
         <div class="flex justify-between">
           <router-link class="no-underline font-semibold text-lg" to="/">
@@ -16,7 +16,7 @@
       </div>
     </header>
 
-    <main class="mt-12">
+    <main>
       <router-view />
     </main>
   </div>
