@@ -9,6 +9,10 @@
         <styleguide-typography />
       </styleguide-section>
 
+      <styleguide-section title="Icons">
+        <styleguide-icons />
+      </styleguide-section>
+
       <styleguide-section title="Button">
         <button class="btn">A button</button>
       </styleguide-section>
@@ -37,8 +41,9 @@
 <script>
 import StyleguideSection from '@/styleguide/Section';
 import SectionSub from '@/styleguide/SectionSub';
-import StyleguideTypography from '@/styleguide/Typography';
 
+import StyleguideTypography from '@/styleguide/Typography';
+import StyleguideIcons from '@/styleguide/Icons';
 import ForgeToggle from '@/components/Toggle';
 
 export default {
@@ -46,6 +51,7 @@ export default {
     StyleguideSection,
     SectionSub,
     StyleguideTypography,
+    StyleguideIcons,
     ForgeToggle,
   },
 };
