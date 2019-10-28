@@ -45,5 +45,9 @@ export default {
   &.svg-icon--sm {
     @apply w-4 h-4;
   }
+
+  &.svg-icon--lg {
+    @apply w-8 h-8;
+  }
 }
 </style>
