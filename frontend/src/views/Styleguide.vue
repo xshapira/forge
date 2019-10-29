@@ -1,12 +1,16 @@
 <template>
   <div class="py-8 bg-gray-100">
     <div class="container">
-      <h1 class="font-semibold text-gray-600">
+      <h1 class="font-semibold text-gray-700">
         Styleguide
       </h1>
 
       <styleguide-section title="Typography">
         <styleguide-typography />
+      </styleguide-section>
+
+      <styleguide-section title="Icons">
+        <styleguide-icons />
       </styleguide-section>
 
       <styleguide-section title="Button">
@@ -37,8 +41,9 @@
 <script>
 import StyleguideSection from '@/styleguide/Section';
 import SectionSub from '@/styleguide/SectionSub';
-import StyleguideTypography from '@/styleguide/Typography';
 
+import StyleguideTypography from '@/styleguide/Typography';
+import StyleguideIcons from '@/styleguide/Icons';
 import ForgeToggle from '@/components/Toggle';
 
 export default {
@@ -46,6 +51,7 @@ export default {
     StyleguideSection,
     SectionSub,
     StyleguideTypography,
+    StyleguideIcons,
     ForgeToggle,
   },
 };

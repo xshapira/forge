@@ -1,6 +1,6 @@
 <template>
-  <section class="mt-12 p-4 bg-white rounded border">
-    <h3 class="text-xl text-red-500 font-semibold">{{ title }}</h3>
+  <section class="mt-12 p-8 bg-white shadow">
+    <h2 class="text-xl font-semibold text-gray-700">{{ title }}</h2>
     <div class="mt-4 pt-4 border-t-4">
       <slot />
     </div>

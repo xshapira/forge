@@ -14,7 +14,6 @@ module.exports = {
 
       black: '#000',
       white: '#fff',
-
       gray: {
         100: '#f7fafc',
         200: '#edf2f7',
@@ -404,11 +403,11 @@ module.exports = {
         fontSize: theme('fontSize.base'),
       },
       link: {
-        fontWeight: theme('fontWeight.bold'),
-        color: theme('colors.red.500'),
+        fontWeight: theme('fontWeight.regular'),
+        textDecoration: 'underline',
+        color: theme('colors.gray.700'),
         '&:hover': {
-          color: theme('colors.red.700'),
-          textDecoration: 'underline',
+          color: theme('colors.gray.600'),
         },
       },
       richText: {
