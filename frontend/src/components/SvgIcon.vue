@@ -49,5 +49,9 @@ export default {
   &.svg-icon--lg {
     @apply w-8 h-8;
   }
+
+  &.svg-icon--xl {
+    @apply w-10 h-10;
+  }
 }
 </style>

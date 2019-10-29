@@ -10,24 +10,36 @@
     </div>
 
     <Section-sub title="Icon sizes">
-      <div class="flex items-start">
+      <div class="flex items-start flex-wrap">
         <div class="mr-4">
           <div class="icon-wrapper">
-            <svg-icon name="menu" class="svg-icon--sm" />
+            <svg-icon name="filter" class="svg-icon--sm" />
           </div>
-          <code-example code='<svg-icon name="menu" class="svg-icon--sm" />' />
+          <code-example
+            code='<svg-icon name="filter" class="svg-icon--sm" />'
+          />
         </div>
         <div class="mr-4">
           <div class="icon-wrapper">
-            <svg-icon name="menu" />
+            <svg-icon name="filter" />
           </div>
-          <code-example code='<svg-icon name="menu" />' />
+          <code-example code='<svg-icon name="filter" />' />
         </div>
         <div>
           <div class="icon-wrapper">
-            <svg-icon name="menu" class="svg-icon--lg" />
+            <svg-icon name="filter" class="svg-icon--lg" />
           </div>
-          <code-example code='<svg-icon name="menu" class="svg-icon--lg" />' />
+          <code-example
+            code='<svg-icon name="filter" class="svg-icon--lg" />'
+          />
+        </div>
+        <div>
+          <div class="icon-wrapper">
+            <svg-icon name="filter" class="svg-icon--xl" />
+          </div>
+          <code-example
+            code='<svg-icon name="filter" class="svg-icon--xl" />'
+          />
         </div>
       </div>
     </Section-sub>
@@ -44,7 +56,7 @@ export default {
 
   data() {
     return {
-      icons: ['menu', 'pencil'],
+      icons: ['filter', 'chevron-left', 'chevron-right', 'pencil'],
     };
   },
 };
