@@ -407,7 +407,7 @@ module.exports = {
         textDecoration: 'underline',
         color: theme('colors.gray.700'),
         '&:hover': {
-          color: theme('colors.gray.500'),
+          color: theme('colors.gray.600'),
         },
       },
       richText: {
