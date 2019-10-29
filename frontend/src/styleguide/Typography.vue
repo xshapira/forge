@@ -33,12 +33,12 @@
     </section-sub>
 
     <section-sub title="Link">
-      <h2 class="my-6 text-lg font-semibold text-red-500"></h2>
-      <a href="http://liip.ch">Liips website</a>
-      <code-example
-        code='<a href="http://liip.ch" [class="link" ]
-      >Liips website</a>'
-      />
+      <p>A link to <a href="http://liip.ch">Liips website</a></p>
+      <code-example code='<a href="http://liip.ch">Liips website</a>' />
+      <button class="text-link mt-6">
+        A link button
+      </button>
+      <code-example code='<button class="text-link">A link button</button>' />
     </section-sub>
   </div>
 </template>

@@ -1,7 +1,7 @@
 <template>
   <div class="py-8 bg-gray-100">
     <div class="container">
-      <h1 class="font-semibold text-gray-600">
+      <h1 class="font-semibold text-gray-700">
         Styleguide
       </h1>
 
