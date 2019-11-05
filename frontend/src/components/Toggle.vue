@@ -3,8 +3,8 @@
     <button
       class="toggle__btn btn"
       :class="classButton"
-      @click="toggle"
       :aria-expanded="!collapsed"
+      @click="toggle"
     >
       <slot />
     </button>
