@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="flex items-center">
-      <div class="mr-2" v-for="icon in icons" :key="icon">
+      <div v-for="icon in icons" :key="icon" class="mr-2">
         <div class="icon-wrapper">
           <svg-icon :name="icon" />
         </div>
@@ -9,40 +9,33 @@
       </div>
     </div>
 
-    <Section-sub title="Icon sizes">
+    <section-sub title="Icon sizes">
       <div class="flex items-start flex-wrap">
         <div class="mr-4">
           <div class="icon-wrapper">
             <svg-icon name="filter" class="svg-icon--sm" />
           </div>
-          <code-example
-            code='<svg-icon name="filter" class="svg-icon--sm" />'
-          />
+          <code-example :code="codeExample1" />
         </div>
         <div class="mr-4">
           <div class="icon-wrapper">
             <svg-icon name="filter" />
           </div>
-          <code-example code='<svg-icon name="filter" />' />
         </div>
         <div>
           <div class="icon-wrapper">
             <svg-icon name="filter" class="svg-icon--lg" />
           </div>
-          <code-example
-            code='<svg-icon name="filter" class="svg-icon--lg" />'
-          />
+          <code-example :code="codeExample2" />
         </div>
         <div>
           <div class="icon-wrapper">
             <svg-icon name="filter" class="svg-icon--xl" />
           </div>
-          <code-example
-            code='<svg-icon name="filter" class="svg-icon--xl" />'
-          />
+          <code-example :code="codeExample3" />
         </div>
       </div>
-    </Section-sub>
+    </section-sub>
   </div>
 </template>
 
@@ -57,6 +50,13 @@ export default {
   data() {
     return {
       icons: ['filter', 'chevron-left', 'chevron-right', 'pencil'],
+      /**
+       * Don't have those in the template, because prettier messes up the
+       * formatting on save
+       */
+      codeExample1: `<svg-icon name="filter" class="svg-icon--sm" />`,
+      codeExample2: `<svg-icon name="filter" class="svg-icon--lg" />`,
+      codeExample3: `<svg-icon name="filter" class="svg-icon--xl" />`,
     };
   },
 };
