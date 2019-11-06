@@ -26,6 +26,18 @@
         <section-tooltip />
       </styleguide-section>
 
+      <styleguide-section title="Modal">
+        <button class="btn" @click="isModalOpen = true">
+          Toggle the modal
+        </button>
+        <modal :is-open="isModalOpen" backdrop-classes="bg-gray-500 opacity-75">
+          <h2 slot="modal-head">Head</h2>
+          <div slot="modal-body">
+            <input v-focus type="text" />
+          </div>
+        </modal>
+      </styleguide-section>
+
       <styleguide-section title="Forge Toggle">
         <forge-toggle>
           Inline Toggle
@@ -48,6 +60,7 @@
 </template>
 
 <script>
+import Modal from '@/components/Modal.vue';
 import StyleguideSection from '@/styleguide/Section';
 import SectionSub from '@/styleguide/SectionSub';
 import StyleguideTypography from '@/styleguide/Typography';
@@ -65,6 +78,12 @@ export default {
     StyleguideFormElements,
     SectionTooltip,
     ForgeToggle,
+    Modal,
+  },
+  data() {
+    return {
+      isModalOpen: false,
+    };
   },
 };
 </script>
