@@ -50,6 +50,8 @@ export default {
     isOpen(newValue) {
       if (newValue === true) {
         this.initiallyFocusedElement = document.activeElement;
+      } else if (this.initiallyFocusedElement instanceof HTMLElement) {
+        this.initiallyFocusedElement.focus();
       }
     },
   },
