@@ -30,7 +30,11 @@
         <button class="btn" @click="isModalOpen = true">
           Toggle the modal
         </button>
-        <modal :is-open="isModalOpen" backdrop-classes="bg-gray-500 opacity-75">
+        <modal
+          :is-open="isModalOpen"
+          @closeModal="isModalOpen = false"
+          backdrop-classes="bg-gray-500 opacity-75"
+        >
           <h2 slot="modal-head">Head</h2>
           <div slot="modal-body">
             <input v-focus type="text" />

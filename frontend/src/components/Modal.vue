@@ -18,6 +18,7 @@ TODO:
       </div>
       <div class="a11y-dialog--body">
         <slot name="modal-body" />
+        <button @click="hideModal">close me</button>
       </div>
       <div class="a11y-dialog--footer">
         <slot name="modal-footer" />
@@ -45,8 +46,17 @@ export default {
       initiallyFocusedElement: null,
     };
   },
-  beforeCreate() {
-    // TODO: in here we store the initial focus, on destroy we restore it
+  watch: {
+    isOpen(newValue) {
+      if (newValue === true) {
+        this.initiallyFocusedElement = document.activeElement;
+      }
+    },
+  },
+  methods: {
+    hideModal() {
+      this.$emit('closeModal');
+    },
   },
 };
 </script>
