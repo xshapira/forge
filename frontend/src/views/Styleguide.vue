@@ -32,8 +32,8 @@
         </button>
         <modal
           :is-open="isModalOpen"
-          @closeModal="isModalOpen = false"
           backdrop-classes="bg-gray-500 opacity-75"
+          @closeModal="isModalOpen = false"
         >
           <h2 slot="modal-head">Head</h2>
           <div slot="modal-body">
