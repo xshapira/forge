@@ -12,12 +12,11 @@ TODO:
 <template>
   <div
     v-if="isOpen"
-    v-focus
     :aria-hidden="isOpen ? 'false' : 'true'"
     @keydown.esc="hideModal"
   >
     <div class="a11y-dialog-backdrop" :class="backdropClasses"></div>
-    <div class="a11y-dialog relative z-10">
+    <div v-focus class="a11y-dialog relative z-10">
       <div class="a11y-dialog--header">
         <slot name="modal-head" />
       </div>
