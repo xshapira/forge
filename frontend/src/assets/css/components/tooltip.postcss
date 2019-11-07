@@ -3,7 +3,7 @@
 \*----------------------------------------*/
 
 .tooltip {
-  --bg-color: theme(colors.black);
+  --bg-color: theme(colors.gray.800);
   --text-color: theme(colors.white);
   --arrow-size: theme(spacing.1);
 }
@@ -36,11 +36,13 @@
 
 .popover-inner,
 .popover-arrow {
-  --bg-color: theme(colors.green.700);
+  --bg-color: theme(colors.white);
 }
 
 .popover-inner {
+  --text-color: theme(colors.black);
   @apply px-5 py-2;
+  @apply shadow;
 }
 
 .popover-arrow {
