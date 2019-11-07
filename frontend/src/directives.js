@@ -11,6 +11,8 @@ const toggleLoading = (el, binding) => {
   const addLoading = () => {
     removeLoading();
 
+    el.classList.add('loading-directive__container');
+
     el.insertAdjacentHTML(
       'afterbegin',
       `<div class="loading-directive"><div><div><svg><use href="${loadingSVG.url}" /></svg></div></div></div>`
@@ -22,7 +24,10 @@ const toggleLoading = (el, binding) => {
    * So we go through the entire DOM and remove all the loaders
    */
   const removeLoading = () => {
+    el.classList.remove('loading-directive__container');
+
     document.querySelectorAll('.loading-directive').forEach(value => {
+      value.parentNode.classList.remove('loading-directive__container');
       value.remove();
     });
   };
