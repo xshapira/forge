@@ -15,34 +15,43 @@ TODO:
     :aria-hidden="isOpen ? 'false' : 'true'"
     @keydown.esc="hideModal"
   >
-    <div class="a11y-dialog-backdrop" :class="backdropClasses"></div>
-    <div v-focus class="a11y-dialog relative z-10">
-      <div class="a11y-dialog--header">
-        <slot name="modal-head" />
+    <div
+      class="opacity-50 bg-blue-200 fixed h-screen left-0 top-0 w-screen z-0"
+      :class="classBackdrop"
+    />
+    <FocusTrap :v-model="isOpen" :deactive="refocusLastActive">
+      <div v-focus class="a11y-dialog relative z-10">
+        <div class="a11y-dialog--header">
+          <slot name="modal-head" />
+        </div>
+        <div class="a11y-dialog--body">
+          <slot name="modal-body" />
+          <button @click="hideModal">close me</button>
+        </div>
+        <div class="a11y-dialog--footer">
+          <slot name="modal-footer" />
+        </div>
       </div>
-      <div class="a11y-dialog--body">
-        <slot name="modal-body" />
-        <button @click="hideModal">close me</button>
-      </div>
-      <div class="a11y-dialog--footer">
-        <slot name="modal-footer" />
-      </div>
-    </div>
+    </FocusTrap>
   </div>
 </template>
 
 <script>
+import { FocusTrap } from 'focus-trap-vue';
 export default {
   name: 'Modal',
+  components: {
+    FocusTrap,
+  },
   props: {
     isOpen: {
       type: Boolean,
       default: false,
       required: true,
     },
-    backdropClasses: {
+    classBackdrop: {
       type: String,
-      default: 'bg-blue-200 opacity-50',
+      default: '',
     },
   },
   data() {
@@ -51,24 +60,27 @@ export default {
     };
   },
   watch: {
-    isOpen(newValue) {
-      if (newValue === true) {
-        this.initiallyFocusedElement = document.activeElement;
-      } else if (this.initiallyFocusedElement instanceof HTMLElement) {
-        this.initiallyFocusedElement.focus();
+    isOpen(opened) {
+      if (opened) {
+        this.saveLastActiveFocus();
       }
     },
   },
   methods: {
     hideModal() {
       this.$emit('closeModal');
+      this.refocusLastActive();
+    },
+    refocusLastActive() {
+      if (this.initiallyFocusedElement instanceof HTMLElement) {
+        this.initiallyFocusedElement.focus();
+      }
+    },
+    saveLastActiveFocus() {
+      this.initiallyFocusedElement = document.activeElement;
     },
   },
 };
 </script>
 
-<style lang="postcss" scoped>
-.a11y-dialog-backdrop {
-  @apply fixed h-screen left-0 top-0 w-screen z-0;
-}
-</style>
+<style lang="postcss" scoped></style>
