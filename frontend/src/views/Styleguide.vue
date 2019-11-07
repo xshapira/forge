@@ -1,9 +1,7 @@
 <template>
   <div class="py-8 bg-gray-100">
     <div class="container">
-      <h1 class="font-semibold text-gray-700">
-        Styleguide
-      </h1>
+      <h1 class="font-semibold text-gray-700">Styleguide</h1>
 
       <styleguide-section title="Typography">
         <styleguide-typography />
@@ -36,11 +34,7 @@
         </forge-toggle>
 
         <section-sub title="Block">
-          <forge-toggle
-            class="mt-4"
-            class-button="block w-full"
-            class-body="mt-4 border rounded"
-          >
+          <forge-toggle class="mt-4" class-button="block w-full" class-body="mt-4 border rounded">
             Im block toggle, rounded and with a border
             <p slot="body">Lorem ipsum dolor sit amet.</p>
           </forge-toggle>
@@ -49,6 +43,9 @@
 
       <styleguide-section title="Simple-Table">
         <section-simple-table />
+
+      <styleguide-section title="Loading directive">
+        <styleguide-loading />
       </styleguide-section>
     </div>
   </div>
@@ -62,6 +59,7 @@ import StyleguideFormElements from '@/styleguide/FormElements';
 import StyleguideIcons from '@/styleguide/Icons';
 import SectionButtons from '@/styleguide/SectionButtons';
 import SectionTooltip from '@/styleguide/SectionTooltip';
+import StyleguideLoading from '@/styleguide/Loading';
 import ForgeToggle from '@/components/Toggle';
 import SectionModal from '@/styleguide/SectionModal';
 import SectionSimpleTable from '@/styleguide/SectionSimpleTable';
@@ -75,6 +73,7 @@ export default {
     StyleguideIcons,
     StyleguideFormElements,
     SectionTooltip,
+    StyleguideLoading,
     ForgeToggle,
     SectionModal,
     SectionSimpleTable,
