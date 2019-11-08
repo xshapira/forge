@@ -11,11 +11,13 @@
       {{ label }}
     </span>
     <input
+      v-model="localValue"
       :type="type"
       :class="['form-input', classInput]"
       :placeholder="placeholder"
       :disabled="disabled"
       :maxlength="maxLength"
+      @input="change"
     />
   </label>
 </template>
@@ -24,6 +26,10 @@
 export default {
   props: {
     label: {
+      type: String,
+      required: true,
+    },
+    value: {
       type: String,
       required: true,
     },
@@ -54,6 +60,21 @@ export default {
     maxLength: {
       type: Number,
       default: null,
+    },
+  },
+  data() {
+    return {
+      localValue: this.value,
+    };
+  },
+  watch: {
+    value(newValue) {
+      this.localValue = newValue;
+    },
+  },
+  methods: {
+    change() {
+      this.$emit('input', this.localValue);
     },
   },
 };

@@ -1,11 +1,11 @@
 <template>
   <div>
     <h3 class="mb-4 text-base font-bold text-gray-700">Input</h3>
-    <forge-input placeholder="Max" label="First name" />
+    <forge-input :value="input" placeholder="Max" label="First name" />
     <code-example code='<forge-input placeholder="Max" label="First name" />' />
 
     <section-sub title="Input block">
-      <forge-input placeholder="Max" label="First name" block />
+      <forge-input :value="input" placeholder="Max" label="First name" block />
       <code-example
         code='<forge-input placeholder="Max" label="First name" block />'
       />
@@ -14,6 +14,7 @@
     <section-sub title="Input disabled">
       <div class="mt-6">
         <forge-input
+          :value="input"
           placeholder="Your email"
           label="Please provide your email address"
           disabled
@@ -66,6 +67,11 @@ export default {
     CodeExample,
     SectionSub,
     ForgeInput,
+  },
+  data() {
+    return {
+      input: 'Here is some value',
+    };
   },
 };
 </script>
