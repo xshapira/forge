@@ -4,10 +4,15 @@
     <forge-input :value="input" placeholder="Max" label="First name" />
     <code-example code='<forge-input placeholder="Max" label="First name" />' />
 
-    <section-sub title="Input block">
-      <forge-input :value="input" placeholder="Max" label="First name" block />
+    <section-sub title="Input is-block">
+      <forge-input
+        :value="input"
+        placeholder="Max"
+        label="First name"
+        is-block
+      />
       <code-example
-        code='<forge-input placeholder="Max" label="First name" block />'
+        code='<forge-input placeholder="Max" label="First name" is-block />'
       />
     </section-sub>
 

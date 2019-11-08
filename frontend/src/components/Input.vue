@@ -3,8 +3,8 @@
     <span
       :class="[
         { 'text-gray-500': disabled },
-        { block: block },
-        { 'mr-4': !block },
+        { block: isBlock },
+        { 'mr-4': !isBlock },
         classLabel,
       ]"
     >
@@ -61,7 +61,7 @@ export default {
         );
       },
     },
-    block: {
+    isBlock: {
       type: Boolean,
       default: false,
     },
