@@ -2,7 +2,7 @@
   <label :class="['block', { 'cursor-not-allowed': disabled }, classLabel]">
     <span
       :class="[
-        { 'is-disabled': disabled },
+        { 'text-gray-500': disabled },
         { block: block },
         { 'mr-4': !block },
         classLabel,
@@ -58,9 +58,3 @@ export default {
   },
 };
 </script>
-
-<style lang="postcss" scoped>
-label > .is-disabled {
-  @apply text-gray-500;
-}
-</style>
