@@ -7,6 +7,5 @@ module.exports = {
         'nesting-rules': true,
       },
     }),
-    require('autoprefixer')(),
   ],
 };
