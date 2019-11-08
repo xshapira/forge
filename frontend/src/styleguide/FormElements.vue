@@ -11,11 +11,25 @@
       />
     </section-sub>
 
+    <section-sub title="Input email">
+      <div class="mt-6">
+        <forge-input
+          type="email"
+          :value="input"
+          placeholder="Your email"
+          label="Please provide your email address"
+        />
+        <code-example
+          code='<forge-input placeholder="Your email" label="Please provide your email address" disabled />'
+        />
+      </div>
+    </section-sub>
+
     <section-sub title="Input disabled">
       <div class="mt-6">
         <forge-input
-          :value="input"
-          placeholder="Your email"
+          value=""
+          placeholder="Disabled"
           label="Please provide your email address"
           disabled
         />

@@ -36,6 +36,30 @@ export default {
     type: {
       type: String,
       default: 'text',
+      validator: function(value) {
+        return (
+          [
+            'color',
+            'date',
+            'datetime-local',
+            'email',
+            'file',
+            'hidden',
+            'image',
+            'month',
+            'number',
+            'password',
+            'range',
+            'reset',
+            'search',
+            'tel',
+            'text',
+            'time',
+            'url',
+            'week',
+          ].indexOf(value) !== -1
+        );
+      },
     },
     block: {
       type: Boolean,
