@@ -196,6 +196,21 @@ module.exports = {
       none: 'none',
     },
     container: {},
+    customForms: theme => ({
+      default: {
+        'input, textarea, multiselect, select': {
+          '&:focus': {
+            boxShadow: theme('boxShadow.default'),
+            borderColor: theme('colors.gray.400'),
+          },
+          '&:disabled': {
+            backgroundColor: theme('colors.gray.200'),
+            color: theme('colors.gray.500'),
+            cursor: theme('cursor.not-allowed'),
+          },
+        },
+      },
+    }),
     cursor: {
       auto: 'auto',
       default: 'default',
@@ -622,6 +637,7 @@ module.exports = {
   },
   corePlugins: {},
   plugins: [
+    require('@tailwindcss/custom-forms'),
     require('tailwindcss-transitions')(),
     require('tailwindcss-typography')({
       ellipsis: false,
