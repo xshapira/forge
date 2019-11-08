@@ -25,8 +25,8 @@ Outputs
 |:-------------------|:-------|:---------|----------|:-------------|
 | value              | String |          | yes      |              |
 | label              | String |          | yes      |              |
-| is-block           | Boolean| false    |          | Set the label text to block. Label will stack above the input field |
-| type               | String | "text"   |          |              |
+| is-block           | Boolean| false    |          | Set the label text to be block and therefore to be stacked above the input field |
+| type               | String | "text"   |          | Set the type of input field. Possible values are `date`, `datetime-local`, `email`, `file`, `month`, `number`, `password`, `range`, `search`, `tel`, `text` (default), `time`, `url`, `week` |
 | disabled           | Boolean| false    |          |              |
 | placeholder        | String | ""       |          |              |
 | class-input        | String | ""       |          |              |
