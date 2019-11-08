@@ -14,6 +14,8 @@ module.exports = {
         '/frontend/',
         '/frontend/accessibilty',
         '/frontend/svg',
+        '/frontend/linting',
+        '/frontend/testing',
         {
           title: "Components",
           collapsable: false,
