@@ -1,19 +1,19 @@
 <template>
   <div>
     <div class="flex flex-wrap">
-      <button class="btn mr-4" v-tooltip="'Tooltip content'">
+      <button v-tooltip="'Tooltip content'" class="btn mr-4">
         Tooltip directive with defaults
       </button>
 
-      <button class="btn mr-4" v-tooltip.top="'Tooltip content'">
+      <button v-tooltip.top="'Tooltip content'" class="btn mr-4">
         Tooltip directive
       </button>
 
-      <button class="btn mr-4" v-tooltip.left="'Tooltip content'">
+      <button v-tooltip.left="'Tooltip content'" class="btn mr-4">
         Tooltip directive left ⬅️
       </button>
 
-      <button class="btn" v-tooltip.right="'Tooltip content'">
+      <button v-tooltip.right="'Tooltip content'" class="btn">
         Tooltip directive right ➡️
       </button>
     </div>
