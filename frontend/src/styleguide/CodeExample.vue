@@ -1,5 +1,5 @@
 <template>
-  <vue-markdown class="mt-2 text-sm">
+  <vue-markdown class="mt-4 text-sm">
     ```html
     {{ code }}
     ```
@@ -9,20 +9,17 @@
 <script>
 import VueMarkdown from 'vue-markdown';
 import 'prismjs';
-import 'prismjs/themes/prism-coy.css';
+import 'prismjs/themes/prism-tomorrow.css';
 
 export default {
+  components: {
+    VueMarkdown,
+  },
   props: {
     code: {
       type: String,
       required: true,
     },
   },
-
-  components: {
-    VueMarkdown,
-  },
 };
 </script>
-
-<style lang="scss" scoped></style>

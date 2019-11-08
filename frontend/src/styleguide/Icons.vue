@@ -15,12 +15,13 @@
           <div class="icon-wrapper">
             <svg-icon name="filter" class="svg-icon--sm" />
           </div>
-          <code-example :code="codeExample1" />
+          <code-example :code="codeExample0" />
         </div>
         <div class="mr-4">
           <div class="icon-wrapper">
             <svg-icon name="filter" />
           </div>
+          <code-example :code="codeExample1" />
         </div>
         <div>
           <div class="icon-wrapper">
@@ -54,7 +55,8 @@ export default {
        * Don't have those in the template, because prettier messes up the
        * formatting on save
        */
-      codeExample1: `<svg-icon name="filter" class="svg-icon--sm" />`,
+      codeExample0: `<svg-icon name="filter" class="svg-icon--sm" />`,
+      codeExample1: `<svg-icon name="filter" />`,
       codeExample2: `<svg-icon name="filter" class="svg-icon--lg" />`,
       codeExample3: `<svg-icon name="filter" class="svg-icon--xl" />`,
     };
