@@ -2,10 +2,10 @@
   Tooltip
 \*----------------------------------------*/
 
-.tooltip {
-  --bg-color: theme(colors.gray.800);
-  --text-color: theme(colors.white);
-  --arrow-size: theme(spacing.1);
+:root {
+  --tooltip-bg-color: theme(colors.gray.800);
+  --tooltip-text-color: theme(colors.white);
+  --tooltip-arrow-size: theme(spacing.1);
 }
 
 .tooltip {
@@ -17,30 +17,32 @@
   @apply py-1 px-3;
   @apply rounded;
 
-  background: var(--bg-color);
-  color: var(--text-color);
+  background: var(--tooltip-bg-color);
+  color: var(--tooltip-text-color);
 }
 
 .tooltip-arrow {
   @apply w-0 h-0;
   @apply absolute z-10;
-  margin: var(--arrow-size);
+  margin: var(--tooltip-arrow-size);
   border-style: solid;
-  border-color: var(--bg-color);
+  border-color: var(--tooltip-bg-color);
 }
 
 /**
-* Popover
-* The popover component inheritates styles from the tooltip
+* Popover styles
+* NOTE: The popover component inheritates styles from the tooltip
+* NOTE: Unfortunately postcss-env does not support this way of
+* using custom properties - meaning the popover does not have a fallback for IE11
+* https://github.com/liip-amboss/forge/issues/56
 */
-
 .popover-inner,
 .popover-arrow {
-  --bg-color: theme(colors.white);
+  --tooltip-bg-color: theme(colors.white);
 }
 
 .popover-inner {
-  --text-color: theme(colors.black);
+  --tooltip-text-color: theme(colors.black);
   @apply px-5 py-2;
   @apply shadow;
 }
@@ -68,59 +70,57 @@
 /**
 * Arrow placement and look
 */
-
-
 .tooltip[x-placement^="top"] {
-  margin-bottom: var(--arrow-size);
+  margin-bottom: var(--tooltip-arrow-size);
 }
 
 .tooltip[x-placement^="top"] .tooltip-arrow {
   @apply my-0;
-  bottom: calc(var(--arrow-size) * -1 );
-  left: calc(50% - var(--arrow-size));
-  border-width: var(--arrow-size) var(--arrow-size) 0 var(--arrow-size);
+  bottom: calc(var(--tooltip-arrow-size) * -1 );
+  left: calc(50% - var(--tooltip-arrow-size));
+  border-width: var(--tooltip-arrow-size) var(--tooltip-arrow-size) 0 var(--tooltip-arrow-size);
   border-left-color: transparent !important;
   border-right-color: transparent !important;
   border-bottom-color: transparent !important;
 }
 
 .tooltip[x-placement^="bottom"] {
-  margin-top: var(--arrow-size);
+  margin-top: var(--tooltip-arrow-size);
 }
 
 .tooltip[x-placement^="bottom"] .tooltip-arrow {
   @apply my-0;
-  top: calc(var(--arrow-size) * -1 );
-  left: calc(50% - var(--arrow-size));
-  border-width: 0 var(--arrow-size) var(--arrow-size) var(--arrow-size);
+  top: calc(var(--tooltip-arrow-size) * -1 );
+  left: calc(50% - var(--tooltip-arrow-size));
+  border-width: 0 var(--tooltip-arrow-size) var(--tooltip-arrow-size) var(--tooltip-arrow-size);
   border-left-color: transparent !important;
   border-right-color: transparent !important;
   border-top-color: transparent !important;
 }
 
 .tooltip[x-placement^="right"] {
-  margin-left: var(--arrow-size);
+  margin-left: var(--tooltip-arrow-size);
 }
 
 .tooltip[x-placement^="right"] .tooltip-arrow {
   @apply mx-0;
-  left: calc(var(--arrow-size) * -1 );
-  top: calc(50% - var(--arrow-size));
-  border-width: var(--arrow-size) var(--arrow-size) var(--arrow-size) 0;
+  left: calc(var(--tooltip-arrow-size) * -1 );
+  top: calc(50% - var(--tooltip-arrow-size));
+  border-width: var(--tooltip-arrow-size) var(--tooltip-arrow-size) var(--tooltip-arrow-size) 0;
   border-left-color: transparent !important;
   border-top-color: transparent !important;
   border-bottom-color: transparent !important;
 }
 
 .tooltip[x-placement^="left"] {
-  margin-right: var(--arrow-size);
+  margin-right: var(--tooltip-arrow-size);
 }
 
 .tooltip[x-placement^="left"] .tooltip-arrow {
   @apply mx-0;
-  right: calc(var(--arrow-size) * -1 );
-  top: calc(50% - var(--arrow-size));
-  border-width: var(--arrow-size) 0 var(--arrow-size) var(--arrow-size);
+  right: calc(var(--tooltip-arrow-size) * -1 );
+  top: calc(50% - var(--tooltip-arrow-size));
+  border-width: var(--tooltip-arrow-size) 0 var(--tooltip-arrow-size) var(--tooltip-arrow-size);
   border-top-color: transparent !important;
   border-right-color: transparent !important;
   border-bottom-color: transparent !important;
