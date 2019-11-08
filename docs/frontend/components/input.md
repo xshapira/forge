@@ -7,16 +7,18 @@ slug: input
 
 ## Usage
 ```vue
-<forge-input label="First name" />
+<forge-input value="Mike" label="First name" />
 ```
 
 ## Props
 | Prop name          | Type          | Default  | Required |
 |:-------------------|:--------------|:---------|----------|
-| label              | String        | ""       | yes      |
-| type               | String        | text     |          |
-| disabled           | Boolean       | text     |          |
-| placeholder        | String        | text     |          |
+| value              | String        |          | yes      |
+| label              | String        |          | yes      |
+| is-block           | Boolean       | false    |          |
+| type               | String        | "text"   |          |
+| disabled           | Boolean       | false    |          |
+| placeholder        | String        | ""       |          |
 | class-input        | String        | ""       |          |
 | class-label        | String        | ""       |          |
 | max-length         | Number        | null     |          |
