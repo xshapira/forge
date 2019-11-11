@@ -15,6 +15,6 @@ See all available options on [GitHub](https://github.com/Akryum/v-tooltip#popove
 ```
 
 ## Notes
-The global configuration are set in [](https://github.com/liip-amboss/forge/blob/master/frontend/src/plugins/vTooltip.js).
+The global configuration are set in [src/plugins/vTooltip.js](https://github.com/liip-amboss/forge/blob/master/frontend/src/plugins/vTooltip.js).
 
 See all available options on [GitHub](https://github.com/Akryum/v-tooltip#global-options).

@@ -6,15 +6,15 @@
       </button>
 
       <button v-tooltip.top="'Tooltip content'" class="btn mr-4">
-        Tooltip directive
+        Tooltip directive from top
       </button>
 
       <button v-tooltip.left="'Tooltip content'" class="btn mr-4">
-        Tooltip directive left ⬅️
+        Tooltip directive from left
       </button>
 
       <button v-tooltip.right="'Tooltip content'" class="btn">
-        Tooltip directive right ➡️
+        Tooltip directive from right
       </button>
     </div>
     <code-example
@@ -30,7 +30,7 @@
 
     <section-sub title="Popover component">
       <v-popover class="mt-4">
-        <button class="btn">Click me</button>
+        <button class="btn tooltip-target">Click me</button>
         <div slot="popover">
           <p>Popover component</p>
         </div>
