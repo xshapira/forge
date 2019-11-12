@@ -34,7 +34,11 @@
         </forge-toggle>
 
         <section-sub title="Block">
-          <forge-toggle class="mt-4" class-button="block w-full" class-body="mt-4 border rounded">
+          <forge-toggle
+            class="mt-4"
+            class-button="block w-full"
+            class-body="mt-4 border rounded"
+          >
             Im block toggle, rounded and with a border
             <p slot="body">Lorem ipsum dolor sit amet.</p>
           </forge-toggle>
