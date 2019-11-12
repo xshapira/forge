@@ -1,6 +1,22 @@
 import Vue from 'vue';
 import loadingSVG from '@/assets/icons/loading.svg';
 
+const addLoading = el => {
+  el.classList.add('loading-directive__container');
+
+  el.insertAdjacentHTML(
+    'afterbegin',
+    `<div class="loading-directive"><div><div><svg><use href="${loadingSVG.url}" /></svg></div></div></div>`
+  );
+};
+
+const removeLoading = el => {
+  el.classList.remove('loading-directive__container');
+  el.querySelectorAll('.loading-directive').forEach(value => {
+    value.remove();
+  });
+};
+
 /**
  * Toggle the loader
  *
@@ -8,48 +24,25 @@ import loadingSVG from '@/assets/icons/loading.svg';
  * @param {*} binding
  */
 const toggleLoading = (el, binding) => {
-  const addLoading = () => {
-    removeLoading();
-
-    el.classList.add('loading-directive__container');
-
-    el.insertAdjacentHTML(
-      'afterbegin',
-      `<div class="loading-directive"><div><div><svg><use href="${loadingSVG.url}" /></svg></div></div></div>`
-    );
-  };
-
-  /**
-   * Apparently, for some reason the loader div might persist a route change
-   * So we go through the entire DOM and remove all the loaders
-   */
-  const removeLoading = () => {
-    el.classList.remove('loading-directive__container');
-
-    document.querySelectorAll('.loading-directive').forEach(value => {
-      value.parentNode.classList.remove('loading-directive__container');
-      value.remove();
-    });
-  };
-
   const value = binding.value;
 
   if (value) {
-    addLoading();
+    addLoading(el);
   } else {
-    removeLoading();
+    removeLoading(el);
   }
 };
 
 const directives = {
   loading: {
-    /* eslint-disable-next-line no-unused-vars */
     bind(el, binding) {
       toggleLoading(el, binding);
     },
-    /* eslint-disable-next-line no-unused-vars */
     update(el, binding) {
       toggleLoading(el, binding);
+    },
+    unbind(el, binding) {
+      removeLoading(el, binding);
     },
   },
 };
