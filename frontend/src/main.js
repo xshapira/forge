@@ -9,6 +9,7 @@ import './assets/css/main.postcss';
 // Plugins
 import './plugins/vTooltip';
 import './plugins/vueAxe';
+import './plugins/vuePortal';
 
 Vue.config.productionTip = false;
 

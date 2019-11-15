@@ -35,9 +35,15 @@
           backdrop-classes="bg-gray-500 opacity-75"
           @closeModal="isModalOpen = false"
         >
-          <h2 slot="modal-head">Head</h2>
-          <div slot="modal-body">
-            <input v-focus type="text" />
+          <h2 slot="header">Head</h2>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi autem
+            vitae provident, molestiae officiis necessitatibus dolor esse
+            debitis aliquid at, numquam illum, iusto ut tempore repellendus non
+            recusandae magni? Eum.
+          </p>
+          <div slot="footer">
+            <p>footer</p>
           </div>
         </modal>
       </styleguide-section>

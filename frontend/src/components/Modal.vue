@@ -6,43 +6,60 @@ TODO:
 4 While Open, Prevent Mouse Clicks Outside the Dialog
 5 While Open, Prevent Tabbing to Outside the Dialog
 6 While Open?
-7 Allow the ESC Key to Close the Dialog
+8 Prevent body scrolling when open
 ------->
 
 <template>
-  <div
-    v-if="isOpen"
-    :aria-hidden="isOpen ? 'false' : 'true'"
-    @keydown.esc="hideModal"
-  >
-    <div
-      class="opacity-50 bg-blue-200 fixed h-screen left-0 top-0 w-screen z-0"
-      :class="classBackdrop"
-    />
-    <FocusTrap :v-model="isOpen" :deactive="refocusLastActive">
-      <div v-focus class="a11y-dialog relative z-10">
-        <div class="a11y-dialog--header">
-          <slot name="modal-head" />
-        </div>
-        <div class="a11y-dialog--body">
-          <slot name="modal-body" />
-          <button @click="hideModal">close me</button>
-        </div>
-        <div class="a11y-dialog--footer">
-          <slot name="modal-footer" />
+  <portal to="body-end">
+    <transition
+      enter-active-class="transition-opacity transition-ease-out"
+      leave-active-class="transition-opacity transition-ease-in"
+      enter-class="opacity-0"
+      enter-to-class="opacity-100"
+      leave-class="opacity-100"
+      leave-to-class="opacity-0"
+    >
+      <div
+        v-if="isOpen"
+        class="modal"
+        :aria-hidden="isOpen ? 'false' : 'true'"
+        @keydown.esc="hideModal"
+      >
+        <div
+          class="modal__backdrop"
+          :class="classBackdrop"
+          @click="hideModal"
+        />
+
+        <div class="modal__container">
+          <div class="modal__header" :class="classHeader">
+            <slot name="header" />
+            <button class="btn" :class="classBtnClose" @click="hideModal">
+              close me
+            </button>
+          </div>
+
+          <div class="modal__body" :class="classBody">
+            <slot />
+          </div>
+
+          <div class="modal__footer" :class="classFooter">
+            <slot name="footer" />
+          </div>
         </div>
       </div>
-    </FocusTrap>
-  </div>
+    </transition>
+  </portal>
 </template>
 
 <script>
-import { FocusTrap } from 'focus-trap-vue';
+// import { FocusTrap } from 'focus-trap-vue';
+
 export default {
   name: 'Modal',
-  components: {
-    FocusTrap,
-  },
+  // components: {
+  //   FocusTrap,
+  // },
   props: {
     isOpen: {
       type: Boolean,
@@ -53,12 +70,30 @@ export default {
       type: String,
       default: '',
     },
+    classHeader: {
+      type: String,
+      default: '',
+    },
+    classBody: {
+      type: String,
+      default: '',
+    },
+    classFooter: {
+      type: String,
+      default: '',
+    },
+    classBtnClose: {
+      type: String,
+      default: '',
+    },
   },
+
   data() {
     return {
       initiallyFocusedElement: null,
     };
   },
+
   watch: {
     isOpen(opened) {
       if (opened) {
@@ -66,6 +101,15 @@ export default {
       }
     },
   },
+
+  mounted() {
+    window.addEventListener('keyup', this.handleKeyEvent);
+  },
+
+  beforeDestroy() {
+    window.removeEventListener('keyup', this.handleKeyEvent);
+  },
+
   methods: {
     hideModal() {
       this.$emit('closeModal');
@@ -79,8 +123,11 @@ export default {
     saveLastActiveFocus() {
       this.initiallyFocusedElement = document.activeElement;
     },
+    handleKeyEvent(event) {
+      if (event.code == 'Escape' && this.isOpen) {
+        this.hideModal();
+      }
+    },
   },
 };
 </script>
-
-<style lang="postcss" scoped></style>

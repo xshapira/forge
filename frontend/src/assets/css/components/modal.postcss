@@ -1,0 +1,33 @@
+/*----------------------------------------*\
+  MODAL
+\*----------------------------------------*/
+
+.modal {
+  @apply flex items-center justify-center w-full h-full;
+  @apply fixed top-0 left-0;
+}
+
+.modal__backdrop {
+  @apply absolute h-full w-full bg-blue-200 opacity-75;
+}
+
+.modal__container {
+  @apply w-11/12 max-w-md mx-auto;
+  @apply z-50;
+  @apply bg-white rounded shadow-lg;
+  @apply overflow-y-auto;
+}
+
+.modal__header {
+  @apply flex justify-between p-4;
+  @apply border-b;
+}
+
+.modal__body {
+  @apply p-4;
+}
+
+.modal__footer {
+  @apply p-4;
+  @apply border-t;
+}
