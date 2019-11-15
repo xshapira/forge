@@ -27,25 +27,7 @@
       </styleguide-section>
 
       <styleguide-section title="Modal">
-        <button class="btn" @click="isModalOpen = true">
-          Toggle the modal
-        </button>
-        <modal
-          :is-open="isModalOpen"
-          backdrop-classes="bg-gray-500 opacity-75"
-          @closeModal="isModalOpen = false"
-        >
-          <h2 slot="header">Head</h2>
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi autem
-            vitae provident, molestiae officiis necessitatibus dolor esse
-            debitis aliquid at, numquam illum, iusto ut tempore repellendus non
-            recusandae magni? Eum.
-          </p>
-          <div slot="footer">
-            <p>footer</p>
-          </div>
-        </modal>
+        <section-modal />
       </styleguide-section>
 
       <styleguide-section title="Forge Toggle">
@@ -70,7 +52,6 @@
 </template>
 
 <script>
-import Modal from '@/components/Modal.vue';
 import StyleguideSection from '@/styleguide/Section';
 import SectionSub from '@/styleguide/SectionSub';
 import StyleguideTypography from '@/styleguide/Typography';
@@ -78,6 +59,7 @@ import StyleguideFormElements from '@/styleguide/FormElements';
 import StyleguideIcons from '@/styleguide/Icons';
 import SectionTooltip from '@/styleguide/SectionTooltip';
 import ForgeToggle from '@/components/Toggle';
+import SectionModal from '@/styleguide/SectionModal';
 
 export default {
   components: {
@@ -88,12 +70,7 @@ export default {
     StyleguideFormElements,
     SectionTooltip,
     ForgeToggle,
-    Modal,
-  },
-  data() {
-    return {
-      isModalOpen: false,
-    };
+    SectionModal,
   },
 };
 </script>

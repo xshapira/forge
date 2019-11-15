@@ -22,6 +22,7 @@ TODO:
       <div
         v-if="isOpen"
         class="modal"
+        :class="classModal"
         :aria-hidden="isOpen ? 'false' : 'true'"
         @keydown.esc="hideModal"
       >
@@ -31,11 +32,15 @@ TODO:
           @click="hideModal"
         />
 
-        <div class="modal__container">
+        <div class="modal__container" :class="classContainer">
           <div class="modal__header" :class="classHeader">
             <slot name="header" />
-            <button class="btn" :class="classBtnClose" @click="hideModal">
-              close me
+            <button
+              class="modal__btn-close"
+              :class="classBtnClose"
+              @click="hideModal"
+            >
+              &times;
             </button>
           </div>
 
@@ -66,7 +71,15 @@ export default {
       default: false,
       required: true,
     },
+    classModal: {
+      type: String,
+      default: '',
+    },
     classBackdrop: {
+      type: String,
+      default: '',
+    },
+    classContainer: {
       type: String,
       default: '',
     },
