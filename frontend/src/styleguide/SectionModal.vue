@@ -1,23 +1,17 @@
 <template>
   <div>
     <button class="btn" @click="isModalOpen = true">
-      Toggle the modal
+      Show Modal
     </button>
-    <modal
-      :is-open="isModalOpen"
-      backdrop-classes="bg-gray-500 opacity-75"
-      @closeModal="isModalOpen = false"
-    >
-      <h4 slot="header">Head</h4>
+    <modal :is-open="isModalOpen" @closeModal="isModalOpen = false">
+      <h4 slot="header">Header</h4>
       <p>
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi autem
         vitae provident, molestiae officiis necessitatibus dolor esse debitis
         aliquid at, numquam illum, iusto ut tempore repellendus non recusandae
         magni? Eum.
       </p>
-      <div slot="footer">
-        <p>footer</p>
-      </div>
+      <button slot="footer" class="btn">Save</button>
     </modal>
   </div>
 </template>

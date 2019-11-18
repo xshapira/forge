@@ -6,11 +6,10 @@ TODO:
 4 While Open, Prevent Mouse Clicks Outside the Dialog
 5 While Open, Prevent Tabbing to Outside the Dialog
 6 While Open?
-8 Prevent body scrolling when open
 ------->
 
 <template>
-  <portal to="body-end">
+  <portal v-if="isOpen" to="body-end">
     <transition
       enter-active-class="transition-opacity transition-ease-out"
       leave-active-class="transition-opacity transition-ease-in"
@@ -34,13 +33,15 @@ TODO:
 
         <div class="modal__container" :class="classContainer">
           <div class="modal__header" :class="classHeader">
-            <slot name="header" />
+            <slot name="header">
+              &nbsp;
+            </slot>
             <button
               class="modal__btn-close"
               :class="classBtnClose"
               @click="hideModal"
             >
-              &times;
+              <svg-icon name="close" class="svg-icon--sm" />
             </button>
           </div>
 
@@ -48,7 +49,7 @@ TODO:
             <slot />
           </div>
 
-          <div class="modal__footer" :class="classFooter">
+          <div v-if="hasFooterSlot" class="modal__footer" :class="classFooter">
             <slot name="footer" />
           </div>
         </div>
@@ -58,13 +59,8 @@ TODO:
 </template>
 
 <script>
-// import { FocusTrap } from 'focus-trap-vue';
-
 export default {
   name: 'Modal',
-  // components: {
-  //   FocusTrap,
-  // },
   props: {
     isOpen: {
       type: Boolean,
@@ -105,6 +101,12 @@ export default {
     return {
       initiallyFocusedElement: null,
     };
+  },
+
+  computed: {
+    hasFooterSlot() {
+      return !!this.$slots['footer'];
+    },
   },
 
   watch: {

@@ -18,13 +18,13 @@ Vue.component('svg-icon', SvgIcon);
 Vue.config.productionTip = false;
 
 // Register a global custom directive called `v-focus`
-Vue.directive('focus', {
-  // When the bound element is inserted into the DOM...
-  inserted: function(el) {
-    // Focus the element
-    el.focus();
-  },
-});
+// Vue.directive('focus', {
+// When the bound element is inserted into the DOM...
+// inserted: function(el) {
+// Focus the element
+// el.focus();
+// },
+// });
 
 new Vue({
   router,
