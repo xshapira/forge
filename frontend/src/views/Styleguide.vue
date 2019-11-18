@@ -17,9 +17,8 @@
         <styleguide-form-elements />
       </styleguide-section>
 
-      <styleguide-section title="Button">
-        <button class="btn">A button</button>
-        <!-- <input class="btn" type="submit" value="A button" /> -->
+      <styleguide-section title="Buttons">
+        <section-buttons />
       </styleguide-section>
 
       <styleguide-section title="Tooltip and Popover">
@@ -53,6 +52,7 @@ import SectionSub from '@/styleguide/SectionSub';
 import StyleguideTypography from '@/styleguide/Typography';
 import StyleguideFormElements from '@/styleguide/FormElements';
 import StyleguideIcons from '@/styleguide/Icons';
+import SectionButtons from '@/styleguide/SectionButtons';
 import SectionTooltip from '@/styleguide/SectionTooltip';
 import ForgeToggle from '@/components/Toggle';
 
@@ -61,6 +61,7 @@ export default {
     StyleguideSection,
     SectionSub,
     StyleguideTypography,
+    SectionButtons,
     StyleguideIcons,
     StyleguideFormElements,
     SectionTooltip,
