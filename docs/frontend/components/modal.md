@@ -7,7 +7,7 @@ slug: modal
 
 ## Usage
 ```vue
-<forge-modal>
+<forge-modal is-open="false">
   <p slot="header">Title</p>
   <div>...</div>
   <p slot="footer">Button</p>
