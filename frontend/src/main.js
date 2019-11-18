@@ -11,6 +11,10 @@ import './plugins/vTooltip';
 import './plugins/vueAxe';
 import './plugins/vuePortal';
 
+// Global components
+import SvgIcon from '@/components/SvgIcon';
+Vue.component('svg-icon', SvgIcon);
+
 Vue.config.productionTip = false;
 
 // Register a global custom directive called `v-focus`
