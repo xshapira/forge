@@ -111,6 +111,7 @@ export default {
     isOpen(opened) {
       if (opened) {
         this.saveLastActiveFocus();
+        this.bodyLock();
       }
     },
   },
@@ -124,9 +125,20 @@ export default {
   },
 
   methods: {
+    bodyLock() {
+      document.body.style.top = `-${window.scrollY}px`;
+      document.body.classList.add('fixed', 'w-full');
+    },
+    bodyUnlock() {
+      const scrollY = document.body.style.top;
+      document.body.classList.remove('fixed', 'w-full');
+      document.body.style.top = '';
+      window.scrollTo(0, parseInt(scrollY || '0') * -1);
+    },
     hideModal() {
       this.$emit('closeModal');
       this.refocusLastActive();
+      this.bodyUnlock();
     },
     refocusLastActive() {
       if (this.initiallyFocusedElement instanceof HTMLElement) {
