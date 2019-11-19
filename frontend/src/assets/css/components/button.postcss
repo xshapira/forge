@@ -3,8 +3,8 @@
 \*----------------------------------------*/
 
 .btn {
-  @apply px-4 py-2;
-  @apply font-semibold;
+  @apply inline-block px-4 py-2;
+  @apply text-gray-800 font-semibold no-underline;
   @apply border rounded transition-250;
 
   &:disabled {
@@ -15,9 +15,7 @@
 /**
 * Sizes
 */
-
 .btn--sm {
-  padding: calc(theme('spacing.2') - 2px) theme('spacing.4');
   @apply text-sm;
 }
 
@@ -49,7 +47,6 @@
 /**
 * Icon
 */
-
 .btn--icon {
   @apply inline-flex items-center;
   @apply p-3;

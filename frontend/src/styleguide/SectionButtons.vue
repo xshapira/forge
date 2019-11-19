@@ -1,26 +1,28 @@
 <template>
   <div>
     <section-sub title="Button default">
-      <button class="btn">A button</button>
-      <button class="btn" disabled>A disabled button</button>
-      <input class="btn" type="submit" value="A form submit" />
-      <a class="btn" href="#">Link</a>
+      <button class="btn">Button</button>
+      <button class="btn" disabled>Disabled button</button>
+      <input class="btn" type="submit" value="A form submit button" />
+      <a class="btn" href="#">Link button</a>
     </section-sub>
 
     <section-sub title="Button Sizes">
-      <button class="btn btn--sm">A small button</button>
-      <button class="btn">A button</button>
-      <button class="btn btn--lg">A large button</button>
+      <button class="btn btn--sm">Small button</button>
+      <button class="btn">Default Button</button>
+      <button class="btn btn--lg">Large button</button>
     </section-sub>
 
     <section-sub title="Button Primary">
-      <button class="btn btn--primary">A button</button>
-      <button class="btn btn--primary" disabled>A button</button>
+      <button class="btn btn--primary">Primary button</button>
+      <button class="btn btn--primary" disabled>Disabled primary button</button>
     </section-sub>
 
     <section-sub title="Button Secondary">
-      <button class="btn btn--secondary">A button</button>
-      <button class="btn btn--secondary" disabled>A button</button>
+      <button class="btn btn--secondary">Secondary button</button>
+      <button class="btn btn--secondary" disabled>
+        Disabled secondary button
+      </button>
     </section-sub>
 
     <section-sub title="Button Icons">
@@ -36,10 +38,6 @@
           Icon on the left
         </button>
         <button class="btn btn--icon-right">
-          Icon on the right
-          <svg-icon name="pencil" />
-        </button>
-        <button class="btn btn--icon-right" disabled>
           Icon on the right
           <svg-icon name="pencil" />
         </button>

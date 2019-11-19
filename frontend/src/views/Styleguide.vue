@@ -13,12 +13,12 @@
         <styleguide-icons />
       </styleguide-section>
 
-      <styleguide-section title="Form elements">
-        <styleguide-form-elements />
-      </styleguide-section>
-
       <styleguide-section title="Buttons">
         <section-buttons />
+      </styleguide-section>
+
+      <styleguide-section title="Form elements">
+        <styleguide-form-elements />
       </styleguide-section>
 
       <styleguide-section title="Tooltip and Popover">
