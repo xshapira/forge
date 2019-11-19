@@ -1,13 +1,3 @@
-<!------
-TODO:
-1 Markup the Dialog and Dialog Overlay Appropriately
-2 On Dialog Open, Set Focus
-3 On Dialog Close, Return Focus to the Last Focused Element
-4 While Open, Prevent Mouse Clicks Outside the Dialog
-5 While Open, Prevent Tabbing to Outside the Dialog
-6 While Open?
-------->
-
 <template>
   <portal v-if="isOpen" to="body-end">
     <transition
