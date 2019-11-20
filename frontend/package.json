@@ -16,6 +16,7 @@
     "postcss-import": "^12.0.1",
     "postcss-preset-env": "^6.7.0",
     "prismjs": "^1.17.1",
+    "svgxuse": "^1.2.6",
     "tailwindcss": "^1.1.2",
     "tailwindcss-transitions": "^2.1.0",
     "tailwindcss-typography": "^2.2.0",

@@ -10,6 +10,9 @@ import './assets/css/main.postcss';
 import './plugins/vTooltip';
 import './plugins/vueAxe';
 
+// Svg sprite support for IE11
+import 'svgxuse';
+
 Vue.config.productionTip = false;
 
 new Vue({
