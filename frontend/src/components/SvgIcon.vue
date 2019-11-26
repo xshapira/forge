@@ -36,22 +36,3 @@ export default {
   },
 };
 </script>
-
-<style lang="postcss">
-.svg-icon {
-  @apply w-6 h-6;
-  @apply fill-current;
-
-  &.svg-icon--sm {
-    @apply w-4 h-4;
-  }
-
-  &.svg-icon--lg {
-    @apply w-8 h-8;
-  }
-
-  &.svg-icon--xl {
-    @apply w-10 h-10;
-  }
-}
-</style>
