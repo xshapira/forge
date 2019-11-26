@@ -9,12 +9,13 @@ import './assets/css/main.postcss';
 // Plugins
 import './plugins/vTooltip';
 import './plugins/vueAxe';
+import Vuelidate from 'vuelidate';
 
 // Svg sprite support for IE11
 import 'svgxuse';
 
 Vue.config.productionTip = false;
-
+Vue.use(Vuelidate);
 new Vue({
   router,
   store,
