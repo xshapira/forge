@@ -38,12 +38,13 @@
         is-block
       />
       <button
-        class="btn"
+        class="btn btn--primary mt-2"
         :disabled="$v.formResponses.password.$invalid"
         @click.prevent="alert('logged in')"
       >
         Login
       </button>
+
       <p
         v-if="!$v.formResponses.password.strongPassword"
         class="mb-2 text-red-500"
