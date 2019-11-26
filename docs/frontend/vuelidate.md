@@ -32,18 +32,7 @@ export default {
       name: {
         required,
         minLength: minLength(2),
-      },
-      password: {
-        required,
-        strongPassword(password) {
-          return (
-            /[a-z]/.test(password) && // checks for a-z
-            /[0-9]/.test(password) && // checks for 0-9
-            /\W|_/.test(password) && // checks for special char
-            password.length >= 6
-          );
-        },
-      },
+      }
     },
   },
 };
