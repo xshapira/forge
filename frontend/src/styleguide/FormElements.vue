@@ -30,13 +30,6 @@
       />
     </section-sub>
     <section-sub title="Input complex validation">
-      <p
-        v-if="!$v.formResponses.password.strongPassword"
-        class="mb-2 text-red-500"
-      >
-        a strong password needs to be 6 characters, have a number, a special
-        char and some text
-      </p>
       <forge-input
         v-model="formResponses.password"
         :value="input"
@@ -44,6 +37,20 @@
         label="Password"
         is-block
       />
+      <button
+        class="btn"
+        :disabled="$v.formResponses.password.$invalid"
+        @click.prevent="alert('logged in')"
+      >
+        Login
+      </button>
+      <p
+        v-if="!$v.formResponses.password.strongPassword"
+        class="mb-2 text-red-500"
+      >
+        a strong password needs to be 6 characters, have a number, a special
+        char and some text
+      </p>
     </section-sub>
 
     <section-sub title="Input email">
