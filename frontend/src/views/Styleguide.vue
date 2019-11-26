@@ -30,9 +30,6 @@
         <section-utils />
       </styleguide-section>
 
-      <styleguide-section title="Vuelidate">
-        <vuelidate title="Vuelidate" />
-      </styleguide-section>
       <styleguide-section title="Forge Toggle">
         <forge-toggle>
           Inline Toggle
@@ -61,14 +58,12 @@ import StyleguideTypography from '@/styleguide/Typography';
 import StyleguideFormElements from '@/styleguide/FormElements';
 import StyleguideIcons from '@/styleguide/Icons';
 import SectionTooltip from '@/styleguide/SectionTooltip';
-import Vuelidate from '@/styleguide/Vuelidate';
 import ForgeToggle from '@/components/Toggle';
 
 export default {
   components: {
     StyleguideSection,
     SectionSub,
-    Vuelidate,
     StyleguideTypography,
     StyleguideIcons,
     StyleguideFormElements,

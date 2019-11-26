@@ -22,7 +22,7 @@
         name is required
       </p>
       <forge-input
-        v-model="$v.formResponses.name.$model"
+        v-model="formResponses.name"
         :value="input"
         placeholder="Max"
         label="First name"
@@ -38,7 +38,7 @@
         char and some text
       </p>
       <forge-input
-        v-model="$v.formResponses.password.$model"
+        v-model="formResponses.password"
         :value="input"
         placeholder="pa$$word12"
         label="Password"
