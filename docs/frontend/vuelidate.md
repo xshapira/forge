@@ -38,3 +38,6 @@ export default {
 };
 ```
 The important thing is that the validation of the inputs is in the `$v` object.
+Please take note that you can use functions as a scheme and add more dynamic validations this way:
+https://vuelidate.js.org/#sub-dynamic-validation-schema
+
