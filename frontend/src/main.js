@@ -15,6 +15,12 @@ import './plugins/vuePortal';
 import SvgIcon from '@/components/SvgIcon';
 Vue.component('svg-icon', SvgIcon);
 
+// Global components
+import SvgIcon from '@/components/SvgIcon';
+Vue.component('svg-icon', SvgIcon);
+// Svg sprite support for IE11
+import 'svgxuse';
+
 Vue.config.productionTip = false;
 
 new Vue({
