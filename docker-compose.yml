@@ -38,11 +38,12 @@ services:
   pgadmin:
     image: dpage/pgadmin4
     environment:
-      PGADMIN_DEFAULT_EMAIL: be-dev@liip.ch
-      PGADMIN_DEFAULT_PASSWORD: AmbossD3v
-      PGADMIN_SERVER_JSON_FILE: /servers.json
+      PGADMIN_DEFAULT_EMAIL: "pgadmin4@pgadmin.org"
+      PGADMIN_DEFAULT_PASSWORD: "AmbossD3v"
+      PGADMIN_CONFIG_SERVER_MODE: "False"
+      PGADMIN_CONFIG_MASTER_PASSWORD_REQUIRED: "False"
     volumes:
-      - ./config/servers.pgadmin.json:/servers.json
+      - ./config/servers.pgadmin.json:/pgadmin4/servers.json
     labels:
       - "traefik.enable=true"
       - "traefik.frontend.rule=Host:pgadmin.docker.test"

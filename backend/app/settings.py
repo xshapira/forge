@@ -11,8 +11,8 @@ Django settings for liip forge project.
 
 import os
 import environ
+from django.utils.translation import ugettext_lazy as _
 
-gettext = lambda s: s  # noqa
 
 ########################
 # ENVIRONMENT SETTINGS #
@@ -49,7 +49,7 @@ USE_TZ = True
 
 LANGUAGE_CODE = 'de'
 LANGUAGES = (
-    ('de', gettext('German')),
+    ('de', _('German')),
 )
 
 #####################
@@ -68,9 +68,12 @@ AUTH_PASSWORD_VALIDATORS = [
 ################
 # APP SETTINGS #
 ################
-DATABASES = {
-    'default': env.db(),
-}
+database_url = env(env.DEFAULT_DATABASE_ENV, default=None)
+if database_url:
+    default_database = env.db_url_config(database_url)
+    DATABASES = {
+        'default': default_database,
+    }
 
 INSTALLED_APPS = [
     'django.contrib.admin',
