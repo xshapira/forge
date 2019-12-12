@@ -1,7 +1,5 @@
 // all selectors in this array will not be purged
 let selectorWhiteListArray = [];
-// element ui
-selectorWhiteListArray.push(/^el-/);
 // code formatter
 selectorWhiteListArray.push(/^language-/);
 selectorWhiteListArray.push(/^pre/);
@@ -14,7 +12,6 @@ const purgecss = require('@fullhuman/postcss-purgecss')({
     './src/**/*.postcss',
     // etc.
   ],
-  // survive element ui, survive!
   whitelistPatternsChildren: selectorWhiteListArray,
 
   // Include any special characters you're using in this regular expression
@@ -25,7 +22,6 @@ module.exports = {
   plugins: [
     require('postcss-import')(),
     require('tailwindcss')(),
-    require('autoprefixer'),
     ...(process.env.NODE_ENV === 'production' ? [purgecss] : []),
     require('postcss-preset-env')({
       browsers: 'last 2 versions',
