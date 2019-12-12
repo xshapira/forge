@@ -25,6 +25,10 @@
         <section-tooltip />
       </styleguide-section>
 
+      <styleguide-section title="Utility classes">
+        <section-utils />
+      </styleguide-section>
+
       <styleguide-section title="Forge Toggle">
         <forge-toggle>
           Inline Toggle
