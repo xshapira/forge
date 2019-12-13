@@ -10,11 +10,17 @@ export default {
   name: 'SVGIcon',
 
   props: {
+    /**
+     * Name of the svg file
+     */
     name: {
       type: String,
       required: true,
     },
 
+    /**
+     * Optional title
+     */
     title: {
       type: String,
       default: null,
@@ -36,3 +42,25 @@ export default {
   },
 };
 </script>
+
+<docs>
+Basic icon
+```vue
+  <SVGIcon name="filter" />
+```
+
+Icon small
+```
+  <SVGIcon name="filter" class="svg-icon--sm" />
+```
+
+Icon large
+```
+  <SVGIcon name="filter" class="svg-icon--lg" />
+```
+
+Icon xl
+```
+  <SVGIcon name="filter" class="svg-icon--xl" />
+```
+</docs>

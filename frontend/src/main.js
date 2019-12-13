@@ -10,7 +10,6 @@ import './assets/css/main.postcss';
 // Plugins
 import './plugins/vTooltip';
 import './plugins/vueAxe';
-import './plugins/smartTable';
 
 // Global components
 import SvgIcon from '@/components/SvgIcon';

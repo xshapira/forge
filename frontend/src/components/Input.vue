@@ -25,14 +25,23 @@
 <script>
 export default {
   props: {
+    /**
+     * Label test
+     */
     label: {
       type: String,
       required: true,
     },
+    /**
+     * Input value
+     */
     value: {
       type: String,
       required: true,
     },
+    /**
+     * Input type
+     */
     type: {
       type: String,
       default: 'text',
@@ -57,26 +66,44 @@ export default {
         );
       },
     },
+    /**
+     * True if the label should be above the input otherwise false
+     */
     isBlock: {
       type: Boolean,
       default: false,
     },
+    /**
+     * True if the input is disabled otherwise false
+     */
     disabled: {
       type: Boolean,
       default: false,
     },
+    /**
+     * Placeholder for the input
+     */
     placeholder: {
       type: String,
       default: '',
     },
+    /**
+     * Optional classes for the input
+     */
     classInput: {
       type: String,
       default: '',
     },
+    /**
+     * Optional classes for the label
+     */
     classLabel: {
       type: String,
       default: '',
     },
+    /**
+     * Max length of the input
+     */
     maxLength: {
       type: Number,
       default: null,
@@ -99,3 +126,20 @@ export default {
   },
 };
 </script>
+
+<docs>
+Basic input
+```vue
+  <Input value="Test" label="Label" />
+```
+
+Input block
+```vue
+  <Input value="Test" label="Label" is-block />
+```
+
+Input disabled
+```vue
+  <Input value="" placeholder="Disabled" label="Please provide your email address" disabled />
+```
+</docs>

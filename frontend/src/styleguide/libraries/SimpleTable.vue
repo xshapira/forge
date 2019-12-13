@@ -22,8 +22,13 @@
 </template>
 
 <script>
+import { VTable } from 'vuejs-smart-table';
+
 export default {
   name: 'SimpleTable',
+  components: {
+    VTable,
+  },
   data: () => ({
     users: [
       {
