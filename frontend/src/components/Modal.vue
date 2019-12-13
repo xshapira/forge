@@ -141,7 +141,7 @@ export default {
       this.initiallyFocusedElement = document.activeElement;
     },
     handleKeyEvent(event) {
-      if (event.code == 'Escape' && this.isOpen) {
+      if (event.code === 'Escape' && this.isOpen) {
         this.hideModal();
       }
     },
