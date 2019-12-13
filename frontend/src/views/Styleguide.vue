@@ -29,10 +29,6 @@
         <section-modal />
       </styleguide-section>
 
-      <styleguide-section title="Utility classes">
-        <section-utils />
-      </styleguide-section>
-
       <styleguide-section title="Forge Toggle">
         <forge-toggle>
           Inline Toggle
