@@ -30,6 +30,11 @@ const tailwind = require('../../../tailwind.config.js');
 const mergedTailwind = resolveConfig(tailwind);
 
 export default {
+  data() {
+    return {
+      theme: mergedTailwind.theme,
+    };
+  },
   computed: {
     colors() {
       const colors = {};
@@ -41,11 +46,6 @@ export default {
       });
       return colors;
     },
-  },
-  data() {
-    return {
-      theme: mergedTailwind.theme,
-    };
   },
 };
 </script>

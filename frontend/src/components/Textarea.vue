@@ -15,8 +15,8 @@
       :class="['form-textarea', 'align-middle', classTextarea]"
       :placeholder="placeholder"
       :disabled="disabled"
-      @input="change"
       :rows="rows"
+      @input="change"
     ></textarea>
   </label>
 </template>
