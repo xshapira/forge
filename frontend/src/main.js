@@ -10,6 +10,7 @@ import './assets/css/main.postcss';
 import './plugins/vTooltip';
 import './plugins/vueAxe';
 import './plugins/vuePortal';
+import Vuelidate from 'vuelidate';
 
 // Global components
 import SvgIcon from '@/components/SvgIcon';
@@ -18,7 +19,7 @@ Vue.component('svg-icon', SvgIcon);
 import 'svgxuse';
 
 Vue.config.productionTip = false;
-
+Vue.use(Vuelidate);
 new Vue({
   router,
   store,

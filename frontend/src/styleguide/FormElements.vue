@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 <template>
   <div>
     <h3 class="mb-4 text-base font-bold text-gray-700">Input</h3>
@@ -14,6 +15,43 @@
       <code-example
         code='<forge-input placeholder="Max" label="First name" is-block />'
       />
+    </section-sub>
+
+    <section-sub title="Input simple validation">
+      <p v-if="!$v.formResponses.name.required" class="mb-2 text-red-500">
+        name is required
+      </p>
+      <forge-input
+        v-model="formResponses.name"
+        :value="input"
+        placeholder="Max"
+        label="First name"
+        is-block
+      />
+    </section-sub>
+    <section-sub title="Input complex validation">
+      <forge-input
+        v-model="formResponses.password"
+        :value="input"
+        placeholder="pa$$word12"
+        label="Password"
+        is-block
+      />
+      <button
+        class="btn btn--primary mt-2"
+        :disabled="$v.formResponses.password.$invalid"
+        @click.prevent="alert('logged in')"
+      >
+        Login
+      </button>
+
+      <p
+        v-if="!$v.formResponses.password.strongPassword"
+        class="mb-2 text-red-500"
+      >
+        a strong password needs to be 6 characters, have a number, a special
+        char and some text
+      </p>
     </section-sub>
 
     <section-sub title="Input email">
@@ -81,6 +119,7 @@ import SectionSub from './SectionSub';
 
 import ForgeInput from '@/components/Input';
 
+import { required, minLength } from 'vuelidate/lib/validators';
 export default {
   components: {
     CodeExample,
@@ -90,7 +129,30 @@ export default {
   data() {
     return {
       input: 'Here is some value',
+      formResponses: {
+        name: '',
+        password: '',
+      },
     };
+  },
+  validations: {
+    formResponses: {
+      name: {
+        required,
+        minLength: minLength(2),
+      },
+      password: {
+        required,
+        strongPassword(password) {
+          return (
+            /[a-z]/.test(password) && // checks for a-z
+            /[0-9]/.test(password) && // checks for 0-9
+            /\W|_/.test(password) && // checks for special char
+            password.length >= 6
+          );
+        },
+      },
+    },
   },
 };
 </script>
