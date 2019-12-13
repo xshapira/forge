@@ -1,7 +1,7 @@
 <template>
   <div>
-    <div class="flex items-center">
-      <div v-for="icon in icons" :key="icon" class="mr-2">
+    <div class="flex items-center flex-wrap">
+      <div v-for="icon in icons" :key="icon" class="mr-2 mb-2">
         <div class="icon-wrapper">
           <svg-icon :name="icon" />
         </div>
@@ -41,16 +41,15 @@
 </template>
 
 <script>
-import SvgIcon from '@/components/SvgIcon';
 import SectionSub from './SectionSub';
 import CodeExample from './CodeExample';
 
 export default {
-  components: { SvgIcon, SectionSub, CodeExample },
+  components: { SectionSub, CodeExample },
 
   data() {
     return {
-      icons: ['filter', 'chevron-left', 'chevron-right', 'pencil'],
+      icons: ['filter', 'chevron-left', 'chevron-right', 'close', 'pencil'],
       /**
        * Don't have those in the template, because prettier messes up the
        * formatting on save

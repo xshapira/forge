@@ -25,8 +25,8 @@
         <section-tooltip />
       </styleguide-section>
 
-      <styleguide-section title="Utility classes">
-        <section-utils />
+      <styleguide-section title="Modal">
+        <section-modal />
       </styleguide-section>
 
       <styleguide-section title="Forge Toggle">
@@ -63,6 +63,7 @@ import StyleguideIcons from '@/styleguide/Icons';
 import SectionButtons from '@/styleguide/SectionButtons';
 import SectionTooltip from '@/styleguide/SectionTooltip';
 import ForgeToggle from '@/components/Toggle';
+import SectionModal from '@/styleguide/SectionModal';
 import SectionSimpleTable from '@/styleguide/SectionSimpleTable';
 
 export default {
@@ -75,6 +76,7 @@ export default {
     StyleguideFormElements,
     SectionTooltip,
     ForgeToggle,
+    SectionModal,
     SectionSimpleTable,
   },
 };
