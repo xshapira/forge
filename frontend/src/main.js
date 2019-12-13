@@ -2,6 +2,7 @@ import Vue from 'vue';
 import App from './App.vue';
 import router from './router';
 import store from './store';
+import Vuelidate from 'vuelidate';
 
 // Styles
 import './assets/css/main.postcss';
@@ -11,6 +12,7 @@ import './plugins/vTooltip';
 import './plugins/vueAxe';
 import './plugins/vuePortal';
 import Vuelidate from 'vuelidate';
+import './plugins/smartTable';
 
 // Global components
 import SvgIcon from '@/components/SvgIcon';
