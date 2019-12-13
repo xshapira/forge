@@ -46,6 +46,10 @@
           </forge-toggle>
         </section-sub>
       </styleguide-section>
+
+      <styleguide-section title="Simple-Table">
+        <section-simple-table />
+      </styleguide-section>
     </div>
   </div>
 </template>
@@ -60,6 +64,7 @@ import SectionButtons from '@/styleguide/SectionButtons';
 import SectionTooltip from '@/styleguide/SectionTooltip';
 import ForgeToggle from '@/components/Toggle';
 import SectionModal from '@/styleguide/SectionModal';
+import SectionSimpleTable from '@/styleguide/SectionSimpleTable';
 
 export default {
   components: {
@@ -72,6 +77,7 @@ export default {
     SectionTooltip,
     ForgeToggle,
     SectionModal,
+    SectionSimpleTable,
   },
 };
 </script>
