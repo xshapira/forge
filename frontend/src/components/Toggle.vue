@@ -27,10 +27,16 @@
 <script>
 export default {
   props: {
+    /**
+     * Optional classes for the button
+     */
     classButton: {
       type: String,
       default: '',
     },
+    /**
+     * Optional classes for the body
+     */
     classBody: {
       type: String,
       default: '',
@@ -48,3 +54,12 @@ export default {
   },
 };
 </script>
+
+<docs>
+```vue
+<Toggle>
+  Text for button
+  <p slot="body">Lorem ipsum dolor sit amet.</p>
+</Toggle>
+```
+</docs>
