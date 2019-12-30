@@ -12,7 +12,7 @@ module.exports = {
         children: [
           '/frontend/',
           '/frontend/accessibilty',
-          '/frontend/SVG',
+          '/frontend/svg',
           '/frontend/linting',
           '/frontend/testing',
           {
