@@ -1,9 +1,5 @@
 <docs>
 ### Headings
-
-
-something can be written here?
-
 ```vue
 <h1>hello world</h1>
 <h2>hello world</h2>
@@ -13,17 +9,15 @@ something can be written here?
 <h6>hello world</h6>
 ```
 
-### Links
-
-Default link
+### Link
 ```vue
 <a href="http://liip.ch">Liips website</a>
 ```
 
 Text link
 ```vue
-  <button class="text-link">
-    A link button
-  </button>
+<button class="text-link">
+  A link button
+</button>
 ```
 </docs>

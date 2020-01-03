@@ -26,7 +26,7 @@
 export default {
   props: {
     /**
-     * Label test
+     * Label that apears above or on the side of the input field
      */
     label: {
       type: String,

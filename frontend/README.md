@@ -34,3 +34,16 @@ npm run test:e2e
 ```
 npm run test:unit
 ```
+
+## Styleguide
+
+### Compiles and hot-realoads for development
+```
+npm run serve:styleguide
+```
+ Should be runing not on `http://localhost:6060/`
+
+### Compiles and minifies for production
+```
+npm run build:styleguide
+```
