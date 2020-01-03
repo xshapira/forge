@@ -5,6 +5,7 @@
         { 'text-gray-500': disabled },
         { block: isBlock },
         { 'mr-4': !isBlock },
+        { 'is-required': required },
         classLabel,
       ]"
     >
@@ -13,9 +14,10 @@
     <input
       v-model="localValue"
       :type="type"
-      :class="['form-input', classInput]"
+      :class="['form-input', { 'mt-1': isBlock }, classInput]"
       :placeholder="placeholder"
       :disabled="disabled"
+      :required="required"
       :maxlength="maxLength"
       @input="change"
     />
@@ -108,6 +110,14 @@ export default {
       type: Number,
       default: null,
     },
+
+    /**
+     * Optional
+     */
+    required: {
+      type: Boolean,
+      default: false,
+    },
   },
   data() {
     return {
@@ -126,6 +136,13 @@ export default {
   },
 };
 </script>
+
+<style lang="postcss" scoped>
+.is-required::after {
+  @apply text-red-500;
+  content: '*';
+}
+</style>
 
 <docs>
 Basic input
