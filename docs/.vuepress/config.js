@@ -19,10 +19,7 @@ module.exports = {
             title: 'Components',
             collapsable: false,
             children: [
-              '/frontend/components/input',
-              '/frontend/components/popover',
-              '/frontend/components/toggle',
-              '/frontend/components/tooltip',
+              '/frontend/components/modal',
               '/frontend/components/simple-table'
             ]
           }
