@@ -12,9 +12,11 @@ module.exports = {
         children: [
           '/frontend/',
           '/frontend/accessibilty',
-          '/frontend/svg',
           '/frontend/linting',
+          '/frontend/purge',
+          '/frontend/svg',
           '/frontend/testing',
+          '/frontend/vuelidate',
           {
             title: 'Components',
             collapsable: false,
