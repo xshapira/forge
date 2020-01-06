@@ -11,10 +11,11 @@
       placeholder="max musterman"
       is-block
       required
-    />
-    <validation-text v-if="!$v.username.required" class="mt-1">
-      Username or email is required
-    </validation-text>
+    >
+      <validation-text v-if="!$v.username.required" class="mt-1">
+        Username or email is required
+      </validation-text>
+    </forge-input>
 
     <forge-input
       v-model="password"
@@ -25,10 +26,11 @@
       placeholder="Password"
       is-block
       required
-    />
-    <validation-text v-if="!$v.password.required" class="mt-1">
-      Password is required
-    </validation-text>
+    >
+      <validation-text v-if="!$v.password.required" class="mt-1">
+        Password is required
+      </validation-text>
+    </forge-input>
 
     <div class="flex items-center justify-between mt-6">
       <p class="text-center ">
@@ -42,9 +44,7 @@
 </template>
 
 <script>
-// TODO: Create a checkbox component
-// TODO: Create a visual component for the validation
-// message with an aria description for the input
+// TODO: Hide errors / show after typing or losing focus
 
 import ForgeInput from '@/components/Input.vue';
 import ValidationText from '@/components/ValidationText.vue';

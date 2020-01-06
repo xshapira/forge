@@ -21,6 +21,7 @@
       :maxlength="maxLength"
       @input="change"
     />
+    <slot></slot>
   </label>
 </template>
 
