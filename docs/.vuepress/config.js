@@ -12,17 +12,16 @@ module.exports = {
         children: [
           '/frontend/',
           '/frontend/accessibilty',
-          '/frontend/svg',
           '/frontend/linting',
+          '/frontend/purge',
+          '/frontend/svg',
           '/frontend/testing',
+          '/frontend/vuelidate',
           {
             title: 'Components',
             collapsable: false,
             children: [
-              '/frontend/components/input',
-              '/frontend/components/popover',
-              '/frontend/components/toggle',
-              '/frontend/components/tooltip',
+              '/frontend/components/modal',
               '/frontend/components/simple-table'
             ]
           }
