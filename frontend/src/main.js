@@ -17,8 +17,7 @@ import './plugins/smartTable';
 import './plugins/vuelidate';
 
 // Global components
-import SvgIcon from '@/components/SvgIcon';
-Vue.component('svg-icon', SvgIcon);
+import './globals/svgIcon';
 
 Vue.config.productionTip = false;
 
