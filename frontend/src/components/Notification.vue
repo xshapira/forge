@@ -28,17 +28,17 @@ export default {
 </script>
 
 <docs>
-
 ```vue
 <template>
-<div>
-<button class="btn" @click="success">Show success</button>
-<button class="btn" @click="error">Show error</button>
+  <div>
+    <button class="btn" @click="success">Show success</button>
+    <button class="btn" @click="error">Show error</button>
 
-<!-- This component should be globally -->
-<notification />
-</div>
+    <!-- This component should be globally -->
+    <notification />
+  </div>
 </template>
+
 <script>
 export default {
 	methods: {
@@ -52,5 +52,4 @@ export default {
 }
 </script>
 ```
-
 </docs>
