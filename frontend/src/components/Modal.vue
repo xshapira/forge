@@ -1,5 +1,5 @@
 <template>
-  <portal v-if="isOpen" to="body-end">
+  <mounting-portal v-if="isOpen" append :mount-to="mountPoint">
     <transition
       enter-active-class="transition-opacity transition-ease-out"
       leave-active-class="transition-opacity transition-ease-in"
@@ -45,7 +45,7 @@
         </div>
       </div>
     </transition>
-  </portal>
+  </mounting-portal>
 </template>
 
 <script>
@@ -84,6 +84,10 @@ export default {
     classBtnClose: {
       type: String,
       default: '',
+    },
+    mountPoint: {
+      type: String,
+      default: 'body',
     },
   },
 
