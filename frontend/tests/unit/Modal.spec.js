@@ -6,7 +6,7 @@ config.stubs['mounting-portal'] = '<div><input /></div>';
 
 import Modal from '@/components/Modal';
 
-// Mock from addEventListener to check if component is registering an event listener
+// Mock addEventListener and removeEventListener to check if component is registering an event listener
 const map = {};
 window.addEventListener = jest.fn((event, cb) => (map[event] = cb));
 window.removeEventListener = jest.fn(event => delete map[event]);
