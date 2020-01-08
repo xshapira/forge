@@ -15,10 +15,10 @@ import './plugins/vueAxe';
 import './plugins/vuePortal';
 import './plugins/smartTable';
 import './plugins/vuelidate';
+import './plugins/notifications';
 
 // Global components
-import SvgIcon from '@/components/SvgIcon';
-Vue.component('svg-icon', SvgIcon);
+import './globals/svgIcon';
 
 Vue.config.productionTip = false;
 
