@@ -107,6 +107,10 @@ module.exports = {
           },
         ],
       },
+      devServer: {
+        // We need this because otherwise Webpack prohibits the connection on styleguide.docker.test
+        public: 'styleguide.docker.test',
+      },
     }
   ),
 

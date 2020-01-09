@@ -35,6 +35,55 @@ services:
     ports:
       - 8000
 
+  frontend:
+    build: ./frontend
+    command: npm run serve
+    volumes:
+      - ./frontend:/code
+    stdin_open: true
+    tty: true
+    labels:
+      - 'traefik.enable=true'
+      - 'traefik.frontend.rule=Host:forge.docker.test'
+      - 'traefik.docker.network=pontsun'
+    networks:
+      - default
+      - pontsun
+    ports:
+      - 8080
+  docs:
+    build: ./docs
+    command: npm run start
+    volumes:
+      - ./docs:/code
+    stdin_open: true
+    tty: true
+    labels:
+      - 'traefik.enable=true'
+      - 'traefik.frontend.rule=Host:docs.docker.test'
+      - 'traefik.docker.network=pontsun'
+    networks:
+      - default
+      - pontsun
+    ports:
+      - 8080
+  styleguide:
+    build: ./frontend
+    command: npm run serve:styleguide
+    volumes:
+      - ./frontend:/code
+    stdin_open: true
+    tty: true
+    labels:
+      - 'traefik.enable=true'
+      - 'traefik.frontend.rule=Host:styleguide.docker.test'
+      - 'traefik.docker.network=pontsun'
+    networks:
+      - default
+      - pontsun
+    ports:
+      - 6060
+
   pgadmin:
     image: dpage/pgadmin4
     environment:
