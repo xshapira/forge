@@ -22,7 +22,5 @@
     <footer>
       &nbsp;
     </footer>
-
-    <portal-target name="body-end" />
   </div>
 </template>
