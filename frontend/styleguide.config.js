@@ -85,6 +85,7 @@ module.exports = {
     path.join(__dirname, 'src/assets/css/main.postcss'),
     path.join(__dirname, 'src/plugins/vTooltip.js'),
     path.join(__dirname, 'src/plugins/notifications.js'),
+    path.join(__dirname, 'src/plugins/vuePortal.js'),
     path.join(__dirname, 'src/globals/svgIcon.js'),
   ],
   theme,

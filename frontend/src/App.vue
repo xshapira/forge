@@ -23,8 +23,6 @@
       &nbsp;
     </footer>
 
-    <portal-target name="body-end" />
-
     <notification />
   </div>
 </template>
