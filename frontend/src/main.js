@@ -15,6 +15,7 @@ import './plugins/vueAxe';
 import './plugins/vuePortal';
 import './plugins/smartTable';
 import './plugins/vuelidate';
+import './plugins/notifications';
 
 // Global components
 import './globals/svgIcon';

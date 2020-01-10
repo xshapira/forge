@@ -14,7 +14,7 @@ module.exports = {
           '/frontend/accessibilty',
           '/frontend/linting',
           '/frontend/purge',
-          '/frontend/svg',
+          '/frontend/SVG',
           '/frontend/testing',
           '/frontend/vuelidate',
           {
@@ -22,7 +22,8 @@ module.exports = {
             collapsable: false,
             children: [
               '/frontend/components/modal',
-              '/frontend/components/simple-table'
+              '/frontend/components/simple-table',
+              '/frontend/components/notification'
             ]
           }
         ]
