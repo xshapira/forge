@@ -1,8 +1,6 @@
 <template>
-  <div class="container pt-12 pb-24 container--sm">
-    <div class="p-8 bg-gray-100 border rounded-lg">
-      <login />
-    </div>
+  <div class="container py-24 container--sm">
+    <login />
   </div>
 </template>
 
