@@ -3,7 +3,7 @@
     <h2>Login</h2>
 
     <forge-input
-      v-model="username"
+      v-model.trim="$v.username.$model"
       class="mt-4"
       class-input="w-full"
       :value="username"
@@ -11,14 +11,16 @@
       placeholder="max musterman"
       is-block
       required
+      @change="setUsername($event.target.value)"
+      @blur="$v.username.$touch"
     >
-      <validation-text v-if="!$v.username.required" class="mt-1">
+      <validation-text v-if="$v.username.$error" class="mt-1">
         Username or email is required
       </validation-text>
     </forge-input>
 
     <forge-input
-      v-model="password"
+      v-model.trim.lazy="$v.password.$model"
       class="w-full mt-4"
       class-input="w-full"
       :value="password"
@@ -26,8 +28,10 @@
       placeholder="Password"
       is-block
       required
+      @change="setPassword($event.target.value)"
+      @blur="$v.password.$touch"
     >
-      <validation-text v-if="!$v.password.required" class="mt-1">
+      <validation-text v-if="$v.password.$error" class="mt-1">
         Password is required
       </validation-text>
     </forge-input>
@@ -67,6 +71,16 @@ export default {
     },
     password: {
       required,
+    },
+  },
+  methods: {
+    setUsername(value) {
+      this.username = value;
+      this.$v.username.$touch();
+    },
+    setPassword(value) {
+      this.password = value;
+      this.$v.password.$touch();
     },
   },
 };

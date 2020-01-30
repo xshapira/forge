@@ -20,6 +20,7 @@
       :required="required"
       :maxlength="maxLength"
       @input="change"
+      @blur="blur"
     />
     <slot></slot>
   </label>
@@ -133,6 +134,9 @@ export default {
   methods: {
     change() {
       this.$emit('input', this.localValue);
+    },
+    blur() {
+      this.$emit('blur', this.localValue);
     },
   },
 };
