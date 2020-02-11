@@ -3,14 +3,11 @@
     <header class="py-6 bg-gray-100">
       <div class="container">
         <div class="flex justify-between">
-          <router-link class="no-underline font-semibold text-lg" to="/">
+          <router-link class="text-lg font-semibold no-underline" to="/">
             Forge
           </router-link>
-          <router-link
-            class="no-underline font-semibold text-lg"
-            to="/styleguide"
-          >
-            Styleguide
+          <router-link class="text-lg font-semibold no-underline" to="/loading">
+            Loading
           </router-link>
         </div>
       </div>
