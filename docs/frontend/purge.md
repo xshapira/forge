@@ -72,3 +72,12 @@ module.exports = {
 };
 ```
 This setup also includes nesting rules and the plugin "postcss-preset-env" which allows us to nest css selectors and support legacy browsers.
+
+## Ignore Elements
+Purge can also be configured to ignore certain elements from inside the CSS files, we recommend not purging all your custom code which is why we tend to set ignore on some elements like this:
+```css
+/* purgecss start ignore */
+@import 'objects/container.postcss';
+@import 'objects/grid.postcss';
+/* purgecss end ignore */
+```
