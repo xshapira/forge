@@ -136,6 +136,7 @@ module.exports = {
     path.join(__dirname, 'src/plugins/notifications.js'),
     path.join(__dirname, 'src/plugins/vuePortal.js'),
     path.join(__dirname, 'src/globals/svgIcon.js'),
+    path.join(__dirname, 'node_modules/svgxuse'),
   ],
   theme,
   styles: {
