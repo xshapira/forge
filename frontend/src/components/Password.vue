@@ -136,6 +136,10 @@ export default {
 .password-wrapper {
   & input {
     @apply w-full;
+
+    &::-ms-reveal {
+      display: none;
+    }
   }
   & .password-icon {
     padding-top: 0.5rem;
