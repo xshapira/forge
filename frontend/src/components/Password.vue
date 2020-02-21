@@ -11,7 +11,10 @@
     >
       {{ label }}
     </span>
-    <div class="relative inline-block" :class="{ 'mt-1': isBlock }">
+    <div
+      class="password-wrapper relative"
+      :class="{ 'mt-1': isBlock, 'inline-block': !isBlock }"
+    >
       <input
         v-model="localValue"
         :type="passwordType"
@@ -130,9 +133,14 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
-.password-icon {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+.password-wrapper {
+  & input {
+    @apply w-full;
+  }
+  & .password-icon {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
 }
 </style>
 
