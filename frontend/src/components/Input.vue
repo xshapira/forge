@@ -136,7 +136,7 @@ export default {
       this.$emit('input', this.localValue);
     },
     blur() {
-      this.$emit('blur', this.localValue);
+      this.$emit('blur');
     },
   },
 };
