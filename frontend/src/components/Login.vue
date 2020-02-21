@@ -19,7 +19,7 @@
       </validation-text>
     </forge-input>
 
-    <forge-input
+    <forge-password
       v-model.trim.lazy="$v.password.$model"
       class="w-full mt-4"
       class-input="w-full"
@@ -34,7 +34,7 @@
       <validation-text v-if="$v.password.$error" class="mt-1">
         Password is required
       </validation-text>
-    </forge-input>
+    </forge-password>
 
     <div class="flex items-center justify-between mt-6">
       <p class="text-center ">
@@ -51,12 +51,14 @@
 // TODO: Hide errors / show after typing or losing focus
 
 import ForgeInput from '@/components/Input.vue';
+import ForgePassword from '@/components/Password.vue';
 import ValidationText from '@/components/ValidationText.vue';
 import { required } from 'vuelidate/lib/validators';
 
 export default {
   components: {
     ForgeInput,
+    ForgePassword,
     ValidationText,
   },
   data() {
