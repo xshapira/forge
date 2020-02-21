@@ -636,7 +636,9 @@ module.exports = {
     wordBreak: ['responsive'],
     zIndex: ['responsive'],
   },
-  corePlugins: {},
+  corePlugins: {
+    container: false,
+  },
   plugins: [
     require('@tailwindcss/custom-forms'),
     require('tailwindcss-transitions')(),
