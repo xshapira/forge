@@ -1,5 +1,5 @@
 <template>
-  <portal v-if="isOpen" to="body-end">
+  <mounting-portal v-if="isOpen" append :mount-to="mountPoint">
     <transition
       enter-active-class="transition-opacity transition-ease-out"
       leave-active-class="transition-opacity transition-ease-in"
@@ -45,45 +45,76 @@
         </div>
       </div>
     </transition>
-  </portal>
+  </mounting-portal>
 </template>
 
 <script>
 export default {
   name: 'Modal',
   props: {
+    /**
+     * Specifies if the modal is opened or not
+     */
     isOpen: {
       type: Boolean,
       default: false,
       required: true,
     },
+    /**
+     * Optional class for the modal
+     */
     classModal: {
       type: String,
       default: '',
     },
+    /**
+     * Optional class for the backdrop
+     */
     classBackdrop: {
       type: String,
       default: '',
     },
+    /**
+     * Optional class for the modal container
+     */
     classContainer: {
       type: String,
       default: '',
     },
+    /**
+     * Optional class for the modal header
+     */
     classHeader: {
       type: String,
       default: '',
     },
+    /**
+     * Optional class for the modal body
+     */
     classBody: {
       type: String,
       default: '',
     },
+    /**
+     * Optional class for the modal footer
+     */
     classFooter: {
       type: String,
       default: '',
     },
+    /**
+     * Optional class for the close button
+     */
     classBtnClose: {
       type: String,
       default: '',
+    },
+    /**
+     * Specifies where the modal is mounted
+     */
+    mountPoint: {
+      type: String,
+      default: 'body',
     },
   },
 
@@ -148,3 +179,22 @@ export default {
   },
 };
 </script>
+
+<docs>
+```vue
+let isOpen = false;
+
+<button @click="isOpen = true">Open modal</button>
+
+<Modal :isOpen="isOpen" @closeModal="isOpen = false">
+  <h4 slot="header">Header</h4>
+  <p>
+    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi autem
+    vitae provident, molestiae officiis necessitatibus dolor esse debitis
+    aliquid at, numquam illum, iusto ut tempore repellendus non recusandae
+    magni? Eum.
+  </p>
+  <button slot="footer" class="btn">Save</button>
+</Modal>
+```
+</docs>
