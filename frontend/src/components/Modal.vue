@@ -12,7 +12,10 @@
         v-if="isOpen"
         class="modal"
         :class="classModal"
+        role="dialog"
         :aria-hidden="isOpen ? 'false' : 'true'"
+        aria-labelledby="modal-header"
+        aria-describedby="modal-body"
         @keydown.esc="hideModal"
       >
         <div
@@ -22,20 +25,21 @@
         />
 
         <div class="modal__container" :class="classContainer">
-          <div class="modal__header" :class="classHeader">
+          <div id="modal-header" class="modal__header" :class="classHeader">
             <slot name="header">
               &nbsp;
             </slot>
             <button
               class="modal__btn-close"
               :class="classBtnClose"
+              aria-label="Close Modal"
               @click="hideModal"
             >
               <svg-icon name="close" class="svg-icon--sm" />
             </button>
           </div>
 
-          <div class="modal__body" :class="classBody">
+          <div id="modal-body" class="modal__body" :class="classBody">
             <slot />
           </div>
 
