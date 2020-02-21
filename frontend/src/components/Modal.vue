@@ -24,7 +24,11 @@
           @click="hideModal"
         />
 
-        <div class="modal__container" :class="classContainer">
+        <div
+          id="modal-container"
+          class="modal__container"
+          :class="classContainer"
+        >
           <div id="modal-header" class="modal__header" :class="classHeader">
             <slot name="header">
               &nbsp;
@@ -53,6 +57,8 @@
 </template>
 
 <script>
+import createFocusTrap from 'focus-trap';
+
 export default {
   name: 'Modal',
   props: {
@@ -120,11 +126,20 @@ export default {
       type: String,
       default: 'body',
     },
+
+    /**
+     * Specifies the initial focus element. Defaults to the close button
+     */
+    focusElement: {
+      type: String,
+      default: '.modal__btn-close',
+    },
   },
 
   data() {
     return {
       initiallyFocusedElement: null,
+      focusTrap: null,
     };
   },
 
@@ -139,6 +154,7 @@ export default {
       if (opened) {
         this.saveLastActiveFocus();
         this.bodyLock();
+        this.activateFocusTrap();
       }
     },
   },
@@ -166,6 +182,9 @@ export default {
       this.$emit('closeModal');
       this.refocusLastActive();
       this.bodyUnlock();
+      if (this.focusTrap != null) {
+        this.focusTrap.deactivate();
+      }
     },
     refocusLastActive() {
       if (this.initiallyFocusedElement instanceof HTMLElement) {
@@ -174,6 +193,14 @@ export default {
     },
     saveLastActiveFocus() {
       this.initiallyFocusedElement = document.activeElement;
+    },
+    activateFocusTrap() {
+      this.$nextTick(() => {
+        this.focusTrap = createFocusTrap('#modal-container', {
+          initialFocus: this.focusElement,
+        });
+        this.focusTrap.activate();
+      });
     },
     handleKeyEvent(event) {
       if (event.code === 'Escape' && this.isOpen) {
