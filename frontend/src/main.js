@@ -1,7 +1,10 @@
+import 'babel-polyfill';
+
 import Vue from 'vue';
 import App from './App.vue';
 import router from './router';
 import store from './store';
+import './directives';
 
 // Styles
 import './assets/css/main.postcss';
@@ -15,10 +18,10 @@ import './plugins/vueAxe';
 import './plugins/vuePortal';
 import './plugins/smartTable';
 import './plugins/vuelidate';
+import './plugins/notifications';
 
 // Global components
-import SvgIcon from '@/components/SvgIcon';
-Vue.component('svg-icon', SvgIcon);
+import './globals/svgIcon';
 
 Vue.config.productionTip = false;
 

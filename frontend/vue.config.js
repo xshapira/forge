@@ -23,4 +23,5 @@ module.exports = {
       },
     },
   },
+  transpileDependencies: ['vuejs-smart-table'],
 };

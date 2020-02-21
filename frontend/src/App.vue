@@ -9,9 +9,9 @@
             </router-link>
             <router-link
               class="text-lg font-semibold no-underline"
-              to="/styleguide"
+              to="/loading"
             >
-              Styleguide
+              Loading
             </router-link>
           </div>
         </div>
@@ -27,9 +27,19 @@
       </div>
     </footer>
 
-    <portal-target name="body-end" />
+    <notification />
   </div>
 </template>
+
+<script>
+import Notification from '@/components/Notification';
+
+export default {
+  components: {
+    Notification,
+  },
+};
+</script>
 
 <style>
 .app-master {
