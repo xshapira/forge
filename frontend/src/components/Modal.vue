@@ -217,8 +217,9 @@ let isOpen = false;
 
 <button @click="isOpen = true">Open modal</button>
 
-<Modal :isOpen="isOpen" @closeModal="isOpen = false">
+<Modal :isOpen="isOpen" @closeModal="isOpen = false" focusElement="#focused-input">
   <h4 slot="header">Header</h4>
+  <input class="form-input" id="focused-input" />
   <p>
     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi autem
     vitae provident, molestiae officiis necessitatibus dolor esse debitis
