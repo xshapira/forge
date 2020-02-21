@@ -39,7 +39,7 @@
               aria-label="Close Modal"
               @click="hideModal"
             >
-              <svg-icon name="close" class="svg-icon--sm" />
+              <svg-icon name="close" class="svg-icon--sm" focusable="false" />
             </button>
           </div>
 
@@ -126,7 +126,6 @@ export default {
       type: String,
       default: 'body',
     },
-
     /**
      * Specifies the initial focus element. Defaults to the close button
      */

@@ -54,6 +54,8 @@ const transpileDependencies = [
   '@tailwindcss/custom-forms',
   'tailwindcss-transitions',
   'tailwindcss-typography',
+  'focus-trap',
+  'vue-axe',
 ];
 
 module.exports = {
