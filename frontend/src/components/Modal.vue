@@ -194,6 +194,7 @@ export default {
       this.initiallyFocusedElement = document.activeElement;
     },
     activateFocusTrap() {
+      // We need next tick to be sure that the element is rendered
       this.$nextTick(() => {
         this.focusTrap = createFocusTrap('#modal-container', {
           initialFocus: this.focusElement,
