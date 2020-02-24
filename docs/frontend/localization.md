@@ -7,6 +7,15 @@ There is also a documentation for this library. [documentation](https://kazupon.
 
 If you want to know how to install vue-i18n have a look at the [documentation](https://kazupon.github.io/vue-i18n/installation.html#compatibility-note)
 
+## Update language
+
+There is a service method to update the i18n language. The method is in the `services/language.service.js` file.
+```javascript
+import { setLanguage } from '@/services/language.service';
+
+setLanguage('en')
+```
+
 ## Features
 
 Vue-i18n has some very useful features.
