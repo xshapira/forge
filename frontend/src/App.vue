@@ -33,10 +33,14 @@
 
 <script>
 import Notification from '@/components/Notification';
+import { setLanguage } from '@/services/language.service';
 
 export default {
   components: {
     Notification,
+  },
+  mounted() {
+    setLanguage('de');
   },
 };
 </script>
