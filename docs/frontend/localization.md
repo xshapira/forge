@@ -3,6 +3,10 @@
 For the localization we are using the vue-i18n library. [vue-i18n](https://github.com/kazupon/vue-i18n)
 There is also a documentation for this library. [documentation](https://kazupon.github.io/vue-i18n/)
 
+## Installation
+
+If you want to know how to install vue-i18n have a look at the [documentation](https://kazupon.github.io/vue-i18n/installation.html#compatibility-note)
+
 ## Features
 
 Vue-i18n has some very useful features.
