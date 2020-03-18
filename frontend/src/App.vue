@@ -13,6 +13,9 @@
             >
               Loading
             </router-link>
+            <router-link class="text-lg font-semibold no-underline" to="/grid">
+              Grid
+            </router-link>
           </div>
         </div>
       </header>
