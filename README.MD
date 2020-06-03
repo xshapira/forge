@@ -18,4 +18,4 @@ Documentation: https://amboss-forge-docs.netlify.com [![Netlify Status](https://
 Want to file a bug, contribute some code, or improve documentation? Excellent! 
 Read up on our guidelines for [contributing][contributing].
 
-[contributing]: https://github.com/angular/angular/blob/master/CONTRIBUTING.md
+[contributing]: https://github.com/liip-amboss/forge/blob/master/CODE_OF_CONDUCT.md
