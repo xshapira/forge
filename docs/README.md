@@ -19,8 +19,8 @@ Once you have Ponstun up and running you can start the Forge docker containers.
 Note the `INITIAL` flag should not be set for subsequent container starts unless you want to reset the database.
 
 After starting the containers you should have the following services avalable:
-- Django backend application: https://backend.docker.test
-- PgAdmin GUI Tool: https://pgadmin.docker.test
+- Django backend application: https://api.forge.docker.test
+- PgAdmin GUI Tool: https://pgadmin.forge.docker.test
  
 ### Add git config                                                                
 ```                                                                             
