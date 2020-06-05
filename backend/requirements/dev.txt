@@ -7,8 +7,9 @@
 asgiref==3.2.7            # via django
 backcall==0.1.0           # via ipython
 decorator==4.4.2          # via ipython, traitlets
+django-cors-headers==3.3.0  # via -r requirements/base.in
 django-environ==0.4.5     # via -r requirements/base.in
-django==3.0.7             # via -r requirements/base.in, djangorestframework, djangorestframework-simplejwt
+django==3.0.7             # via -r requirements/base.in, django-cors-headers, djangorestframework, djangorestframework-simplejwt
 djangorestframework-camel-case==1.1.2  # via -r requirements/base.in
 djangorestframework-simplejwt==4.4.0  # via -r requirements/base.in
 djangorestframework==3.11.0  # via -r requirements/base.in, djangorestframework-simplejwt
@@ -31,6 +32,7 @@ six==1.15.0               # via traitlets
 sqlparse==0.3.1           # via django
 traitlets==4.3.3          # via ipython
 wcwidth==0.2.3            # via prompt-toolkit
+whitenoise==5.1.0         # via -r requirements/base.in
 zipp==3.1.0               # via importlib-metadata
 
 # The following packages are considered to be unsafe in a requirements file:

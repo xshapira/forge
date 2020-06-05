@@ -26,6 +26,7 @@
       :value="password"
       label="Password"
       placeholder="Password"
+      type="password"
       is-block
       required
       @change="setPassword($event.target.value)"
@@ -40,7 +41,11 @@
       <p class="text-center ">
         <a href="#">Forgot Password?</a>
       </p>
-      <button class="btn btn--primary" :disabled="$v.$invalid">
+      <button
+        class="btn btn--primary"
+        :disabled="$v.$invalid"
+        @click.prevent="doLogin"
+      >
         Login
       </button>
     </div>
@@ -53,6 +58,7 @@
 import ForgeInput from '@/components/Input.vue';
 import ValidationText from '@/components/ValidationText.vue';
 import { required } from 'vuelidate/lib/validators';
+import { login } from '@/services/auth.js';
 
 export default {
   components: {
@@ -81,6 +87,14 @@ export default {
     setPassword(value) {
       this.password = value;
       this.$v.password.$touch();
+    },
+    async doLogin() {
+      try {
+        const token = await login(this.username, this.password);
+        this.$store.commit('Auth/setToken', token);
+      } catch (e) {
+        // TODO add error handling
+      }
     },
   },
 };

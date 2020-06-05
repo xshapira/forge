@@ -12,14 +12,14 @@ services:
   backend:
     build: .
     command: sh -c 'while true; do ./manage.py runserver 0.0.0.0:8000; sleep 1; done'
-    env_file:
-      - .env
     environment:
       INITIAL: "${INITIAL:-0}"
       DJANGO_ALLOWED_HOSTS: ${TRAEFIK_BACKEND_URL}
     volumes:
       - ./backend/.venv:/venv
       - ./backend:/code
+    env_file:
+      - .env
     depends_on:
       - db
     stdin_open: true
@@ -39,6 +39,8 @@ services:
     command: npm run serve
     volumes:
       - ./frontend:/code
+    env_file:
+      - .env
     stdin_open: true
     tty: true
     labels:
