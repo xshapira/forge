@@ -76,6 +76,7 @@ if database_url:
     }
 
 INSTALLED_APPS = [
+    "accounts.apps.AccountsConfig",
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -84,7 +85,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders'
-
 ]
 
 MIDDLEWARE = [
@@ -145,3 +145,8 @@ SIMPLE_JWT = {
         minutes=env('REFRESH_TOKEN_LIFETIME', default=120)
     ),
 }
+
+##################
+# AUTHENTICATION #
+##################
+AUTH_USER_MODEL = "accounts.User"

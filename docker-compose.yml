@@ -5,6 +5,8 @@ services:
     image: postgres:alpine
     volumes:
       - ./backend/.data/postgres_dev:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
     networks:
       - default
       - pontsun
