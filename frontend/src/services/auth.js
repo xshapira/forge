@@ -11,11 +11,9 @@ const login = async (email, password) => {
     password: password,
   });
 
-  const result = response.data.result;
+  const result = response.data;
 
-  return {
-    token: result.access,
-  };
+  return result;
 };
 
 export { login };

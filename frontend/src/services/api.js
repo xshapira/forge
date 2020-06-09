@@ -1,5 +1,5 @@
 import axios from 'axios';
-import store from '@/store/';
+import store from '@/store/index';
 
 const mtgApi = axios.create({
   baseURL: `https://api.scryfall.com`,

@@ -52,8 +52,6 @@
 </template>
 
 <script>
-// TODO: Hide errors / show after typing or losing focus
-
 import ForgeInput from '@/components/Input.vue';
 import ValidationText from '@/components/ValidationText.vue';
 import { required } from 'vuelidate/lib/validators';
@@ -89,8 +87,13 @@ export default {
     },
     async doLogin() {
       try {
-        const token = await login(this.email, this.password);
-        this.$store.commit('Auth/setToken', token);
+        const loginData = await login(this.email, this.password);
+        this.$store.commit('Auth/setToken', loginData.access);
+        this.$store.commit('Auth/setRefreshToken', loginData.refresh);
+        this.$store.commit('Auth/setUserName', {
+          firstName: loginData.firstName,
+          lastName: loginData.lastName,
+        });
       } catch (e) {
         // TODO add error handling
       }
