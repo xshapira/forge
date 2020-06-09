@@ -35,7 +35,12 @@ class EmailUserManager(BaseUserManager):
         return self._create_user(email, password, **extra_fields)
 
 class User(AbstractUser):
+    # we always use a mail address to login, not an username
     USERNAME_FIELD = 'email'
     email = models.EmailField(unique=True)
+
+    # override username, as it is not used and therefor shouldn't be unique
+    username = models.CharField(blank=True, max_length=255)
+
     REQUIRED_FIELDS = ('first_name', 'last_name')
     objects = EmailUserManager()
