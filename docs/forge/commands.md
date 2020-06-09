@@ -1,4 +1,5 @@
-# Use the Makefile to run docker-compose commands
+# Commands
+## Use the Makefile to run docker-compose commands
 To avoid some typing there is a Makefile that includes the most frequent 
 commands to control the application.
 

@@ -24,4 +24,10 @@ module.exports = {
     },
   },
   transpileDependencies: ['vuejs-smart-table'],
+  configureWebpack: {
+    devServer: {
+      // We need this because otherwise Webpack prohibits the connection on forge.docker.test
+      public: 'forge.docker.test',
+    },
+  },
 };

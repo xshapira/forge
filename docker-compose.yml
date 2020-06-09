@@ -13,11 +13,10 @@ services:
     build: .
     command: sh -c 'while true; do ./manage.py runserver 0.0.0.0:8000; sleep 1; done'
     env_file:
-      - ./config/.env
+      - .env
     environment:
       INITIAL: "${INITIAL:-0}"
-      DJANGO_ALLOWED_HOSTS: forge.docker.test
-      DATABASE_URL: postgres://postgres:postgres@db/postgres
+      DJANGO_ALLOWED_HOSTS: ${TRAEFIK_BACKEND_URL}
     volumes:
       - ./backend/.venv:/venv
       - ./backend:/code
@@ -27,7 +26,7 @@ services:
     tty: true
     labels:
       - "traefik.enable=true"
-      - "traefik.frontend.rule=Host:forge.docker.test"
+      - "traefik.frontend.rule=Host:${TRAEFIK_BACKEND_URL}"
       - 'traefik.docker.network=pontsun'
     networks:
       - default
@@ -35,18 +34,65 @@ services:
     ports:
       - 8000
 
+  frontend:
+    build: ./frontend
+    command: npm run serve
+    volumes:
+      - ./frontend:/code
+    stdin_open: true
+    tty: true
+    labels:
+      - 'traefik.enable=true'
+      - 'traefik.frontend.rule=Host:${TRAEFIK_FRONTEND_URL}'
+      - 'traefik.docker.network=pontsun'
+    networks:
+      - default
+      - pontsun
+    ports:
+      - 8080
+  docs:
+    build: ./docs
+    command: sh -c "npm install && npm run start"
+    volumes:
+      - ./docs:/code
+    stdin_open: true
+    tty: true
+    labels:
+      - 'traefik.enable=true'
+      - 'traefik.frontend.rule=Host:${TRAEFIK_DOCS_URL}'
+      - 'traefik.docker.network=pontsun'
+    networks:
+      - default
+      - pontsun
+    ports:
+      - 8080
+
+  styleguide:
+    build: ./frontend
+    command: npm run serve:styleguide
+    volumes:
+      - ./frontend:/code
+    stdin_open: true
+    tty: true
+    labels:
+      - 'traefik.enable=true'
+      - 'traefik.frontend.rule=Host:${TRAEFIK_STYLEGUIDE_URL}'
+      - 'traefik.docker.network=pontsun'
+    networks:
+      - default
+      - pontsun
+    ports:
+      - 6060
+
   pgadmin:
     image: dpage/pgadmin4
-    environment:
-      PGADMIN_DEFAULT_EMAIL: "pgadmin4@pgadmin.org"
-      PGADMIN_DEFAULT_PASSWORD: "AmbossD3v"
-      PGADMIN_CONFIG_SERVER_MODE: "False"
-      PGADMIN_CONFIG_MASTER_PASSWORD_REQUIRED: "False"
     volumes:
       - ./config/servers.pgadmin.json:/pgadmin4/servers.json
+    env_file:
+      - .env
     labels:
       - "traefik.enable=true"
-      - "traefik.frontend.rule=Host:pgadmin.docker.test"
+      - "traefik.frontend.rule=Host:${TRAEFIK_PGADMIN_URL}"
       - 'traefik.docker.network=pontsun'
     networks:
       - default

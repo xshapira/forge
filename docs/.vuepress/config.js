@@ -32,7 +32,11 @@ module.exports = {
       {
         title: 'Backend',
         collapsable: false,
-        children: ['/backend/']
+        children: [
+            '/backend/',
+            '/backend/ide',
+            '/backend/apps'
+        ]
       }
     ]
   }
