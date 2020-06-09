@@ -3,19 +3,18 @@
     <h2>Login</h2>
 
     <forge-input
-      v-model.trim="$v.username.$model"
+      v-model.trim="$v.email.$model"
       class="mt-4"
       class-input="w-full"
-      :value="username"
-      label="Username"
-      placeholder="max musterman"
+      :value="email"
+      label="E-Mail"
       is-block
       required
-      @change="setUsername($event.target.value)"
-      @blur="$v.username.$touch"
+      @change="setEmail($event.target.value)"
+      @blur="$v.email.$touch"
     >
-      <validation-text v-if="$v.username.$error" class="mt-1">
-        Username or email is required
+      <validation-text v-if="$v.email.$error" class="mt-1">
+        E-Mail is required
       </validation-text>
     </forge-input>
 
@@ -67,12 +66,12 @@ export default {
   },
   data() {
     return {
-      username: '',
+      email: '',
       password: '',
     };
   },
   validations: {
-    username: {
+    email: {
       required,
     },
     password: {
@@ -80,9 +79,9 @@ export default {
     },
   },
   methods: {
-    setUsername(value) {
-      this.username = value;
-      this.$v.username.$touch();
+    setEmail(value) {
+      this.email = value;
+      this.$v.email.$touch();
     },
     setPassword(value) {
       this.password = value;
@@ -90,7 +89,7 @@ export default {
     },
     async doLogin() {
       try {
-        const token = await login(this.username, this.password);
+        const token = await login(this.email, this.password);
         this.$store.commit('Auth/setToken', token);
       } catch (e) {
         // TODO add error handling

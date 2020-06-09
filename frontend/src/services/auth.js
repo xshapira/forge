@@ -5,9 +5,9 @@ import { userApi } from './api';
  *
  * @return User Info
  */
-const login = async (username, password) => {
-  const response = await userApi.post('token/', {
-    username: username,
+const login = async (email, password) => {
+  const response = await userApi.post('account/token/', {
+    email: email,
     password: password,
   });
 
