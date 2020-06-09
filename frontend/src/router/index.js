@@ -7,6 +7,7 @@ Vue.use(Router);
 
 const router = new Router({
   mode: 'history',
+  // TODO: make this mote dynamic and add in setup
   base: process.env.BASE_URL || 'http://forge.docker.test',
   routes,
 });
