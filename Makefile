@@ -18,6 +18,9 @@ clean: stop
 migrate:
 	@docker-compose exec backend python ./manage.py migrate
 
+makemigrations:
+	@docker-compose exec backend python ./manage.py makemigrations
+
 superuser:
 	@docker-compose exec backend python ./manage.py createsuperuser
 
