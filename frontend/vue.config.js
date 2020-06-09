@@ -6,6 +6,12 @@ module.exports = {
       .loader('svgo-loader');
   },
   pluginOptions: {
+    i18n: {
+      locale: 'de',
+      fallbackLocale: 'de',
+      localeDir: 'locales',
+      enableInSFC: false,
+    },
     svgSprite: {
       dir: 'src/assets/icons',
       test: /\.(svg)(\?.*)?$/,

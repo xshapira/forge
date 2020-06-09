@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>Login</h2>
+    <h2>{{ $t('login') }}</h2>
 
     <forge-input
       v-model.trim="$v.email.$model"
@@ -42,7 +42,7 @@
         :disabled="$v.$invalid"
         @click.prevent="doLogin"
       >
-        Login
+        {{ $t('login') }}
       </button>
     </div>
   </div>
