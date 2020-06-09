@@ -91,6 +91,7 @@ export default {
           firstName: loginData.firstName,
           lastName: loginData.lastName,
         });
+        this.$router.push({ name: 'welcome' });
       } catch (e) {
         // TODO add error handling
       }
