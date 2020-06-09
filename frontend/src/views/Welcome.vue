@@ -1,7 +1,9 @@
 <template>
   <div class="container py-24 container--sm">
     <h1>You have logged in!!!</h1>
-    <a href="/">log out</a>
+    <button @click="logout">
+      {{ $t('logout') }}
+    </button>
   </div>
 </template>
 
@@ -9,5 +11,11 @@
 export default {
   name: 'Home',
   components: {},
+  methods: {
+    logout() {
+      this.$store.commit('Auth/logout');
+      this.$router.push({ name: 'home' });
+    },
+  },
 };
 </script>
