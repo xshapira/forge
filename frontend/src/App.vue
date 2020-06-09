@@ -13,6 +13,7 @@
             >
               Loading
             </router-link>
+            <div v-if="isLoggedIn">{{ firstName }} {{ lastName }}</div>
           </div>
         </div>
       </header>
@@ -33,10 +34,15 @@
 
 <script>
 import Notification from '@/components/Notification';
+import { mapState, mapGetters } from 'vuex';
 
 export default {
   components: {
     Notification,
+  },
+  computed: {
+    ...mapState('Auth', ['firstName', 'lastName']),
+    ...mapGetters('Auth', ['isLoggedIn']),
   },
 };
 </script>
