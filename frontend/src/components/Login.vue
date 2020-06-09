@@ -37,9 +37,6 @@
     </forge-input>
 
     <div class="flex items-center justify-between mt-6">
-      <p class="text-center ">
-        <a href="#">Forgot Password?</a>
-      </p>
       <button
         class="btn btn--primary"
         :disabled="$v.$invalid"
