@@ -1,9 +1,13 @@
-# App Template
-Use this file as a template for all your custom apps.
-Copy this file and add the new file in .vuepress/config.js backend children.
+# Apps
 
-# App Name
-{APP_DESCRIPTION}
+## Accounts
+The account app is used to mange the users inside of django.
+To login you can use the simplejwt api. 
 
-## Model Name
-{MODEL_FIELDS_WITH_DESCRIPTION}
+### User
+The default user model is overwritten to disable the username and enable the
+user to login with email only.
+
+### EmailUserManager
+We also overwrite the default user manager, so we can easily create users with
+email instead of username.

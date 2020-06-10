@@ -7,6 +7,14 @@ module.exports = {
     nav: [{ text: 'GitHub', link: 'https://github.com/liip-amboss/forge' }],
     sidebar: [
       {
+        title: 'Usage',
+        collapsable: false,
+        children: [
+            '/usage/setup',
+            '/usage/commands',
+        ]
+      },
+      {
         title: 'Frontend',
         collapsable: false,
         children: [

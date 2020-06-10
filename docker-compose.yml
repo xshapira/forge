@@ -38,7 +38,7 @@ services:
 
   frontend:
     build: ./frontend
-    command: npm run serve
+    command: sh -c "npm install && npm run serve"
     volumes:
       - ./frontend:/code
     env_file:
@@ -73,7 +73,7 @@ services:
 
   styleguide:
     build: ./frontend
-    command: npm run serve:styleguide
+    command: sh -c "npm install && npm run serve:styleguide"
     volumes:
       - ./frontend:/code
     stdin_open: true

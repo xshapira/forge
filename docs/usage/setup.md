@@ -9,12 +9,16 @@ Once you have Ponstun up and running you can start the Forge docker containers.
 1. Make a copy of the `.env.dist` file and name it `.env`.
 2. Adapt the environment variables to your needs
 3. Run `INITIAL=1 docker-compose up` (if you use the fish shell you can run `set -x INITIAL 1; docker-compose up`)
+    - If the backend fails to start, check that your user has permissions on the backend/.venv folder
+    - To also setup the default data, run `make migrate` after containers are up
+    - If you are all set up, reset the install flag `INITIAL=0`
 
-Note the `INITIAL` flag should not be set for subsequent container starts unless you want to reset the database.
-
-After starting the containers you should have the following services avalable:
-- Django backend application: https://backend.docker.test
-- PgAdmin GUI Tool: https://pgadmin.docker.test
+All your services are now available on the urls you added in .env:
+* The vue website frontend on: TRAEFIK_FRONTEND_URL
+* The django rest api on: TRAEFIK_BACKEND_URL
+* The vue style guide on: TRAEFIK_STYLEGUIDE_URL
+* The documentation on: TRAEFIK_DOCS_URL
+* PGAdmin on: TRAEFIK_PGADMIN_URL
  
 ## Add git config                                                                
 ```                                                                             
