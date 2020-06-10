@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "start": "vuepress dev",
+    "start": "vuepress dev --port 8081",
     "build": "vuepress build"
   },
   "devDependencies": {
