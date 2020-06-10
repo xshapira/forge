@@ -57,7 +57,7 @@ LANGUAGES = (
 #####################
 SECRET_KEY = env('SECRET_KEY')
 DEBUG = env.bool('DEBUG')
-ALLOWED_HOSTS = env.list('DJANGO_ALLOWED_HOSTS', default=[])
+ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', default=[])
 AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'},
     {'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator'},

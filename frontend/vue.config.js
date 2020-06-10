@@ -32,7 +32,8 @@ module.exports = {
   transpileDependencies: ['vuejs-smart-table'],
   configureWebpack: {
     devServer: {
-      disableHostCheck: true,
+      // We need this because otherwise Webpack prohibits the connection
+      public: `${process.env.TRAEFIK_FRONTEND_URL}`,
     },
   },
 };
