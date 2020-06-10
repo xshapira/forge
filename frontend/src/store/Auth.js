@@ -3,7 +3,7 @@ export default {
 
   state: {
     /**
-     * JWT token
+     * hydrate the state from the session if it exists otherwise null it
      */
     token: sessionStorage.getItem('token') || null,
     refreshToken: sessionStorage.getItem('refreshToken') || null,
