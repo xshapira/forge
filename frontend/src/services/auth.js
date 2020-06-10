@@ -15,5 +15,19 @@ const login = async (email, password) => {
 
   return result;
 };
+/**
+ * Perform a refresh
+ *
+ * @return User Info
+ */
+const getRefreshtoken = async token => {
+  const response = await userApi.post('account/token/refresh/', {
+    refresh: token,
+  });
 
-export { login };
+  const result = response.data;
+
+  return result;
+};
+
+export { login, getRefreshtoken };
