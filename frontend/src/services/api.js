@@ -40,6 +40,7 @@ axios.interceptors.response.use(
       .then(token => {
         // set token in store
         store.commit('Auth/setToken', token.access);
+        store.commit('Auth/setRefreshToken', token.refresh);
         // New request with new token
         const config = error.config;
         config.headers['Authorization'] = `Bearer ${token.acess}`;

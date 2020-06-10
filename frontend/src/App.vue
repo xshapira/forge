@@ -15,6 +15,7 @@
             </router-link>
             <div v-if="isLoggedIn">{{ firstName }} {{ lastName }}</div>
           </div>
+          <span @click="refresh">click meä</span>
         </div>
       </header>
       <main>
@@ -35,14 +36,20 @@
 <script>
 import Notification from '@/components/Notification';
 import { mapState, mapGetters } from 'vuex';
+import { getRefreshtoken } from '@/services/auth';
 
 export default {
   components: {
     Notification,
   },
   computed: {
-    ...mapState('Auth', ['firstName', 'lastName']),
+    ...mapState('Auth', ['firstName', 'lastName', 'refreshToken']),
     ...mapGetters('Auth', ['isLoggedIn']),
+  },
+  methods: {
+    refresh() {
+      getRefreshtoken(this.refreshToken);
+    },
   },
 };
 </script>

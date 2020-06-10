@@ -144,6 +144,7 @@ SIMPLE_JWT = {
     'REFRESH_TOKEN_LIFETIME': timedelta(
         minutes=env('REFRESH_TOKEN_LIFETIME', default=120)
     ),
+    'ROTATE_REFRESH_TOKENS': True,
 }
 
 ##################
