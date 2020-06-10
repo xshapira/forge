@@ -36,6 +36,10 @@
       </validation-text>
     </forge-input>
 
+    <span v-if="errorMessage" class="block mt-4 text-red-600">
+      {{ errorMessage }}
+    </span>
+
     <div class="flex items-center justify-between mt-6">
       <button
         class="btn btn--primary"
@@ -61,6 +65,7 @@ export default {
   },
   data() {
     return {
+      errorMessage: '',
       email: '',
       password: '',
     };
@@ -85,6 +90,7 @@ export default {
     async doLogin() {
       try {
         const loginData = await login(this.email, this.password);
+        this.errorMessage = '';
         this.$store.commit('Auth/setToken', loginData.access);
         this.$store.commit('Auth/setRefreshToken', loginData.refresh);
         this.$store.commit('Auth/setUserName', {
@@ -93,7 +99,7 @@ export default {
         });
         this.$router.push({ name: 'welcome' });
       } catch (e) {
-        // TODO add error handling
+        this.errorMessage = e.response.data.detail;
       }
     },
   },
