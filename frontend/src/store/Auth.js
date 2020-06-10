@@ -5,11 +5,10 @@ export default {
     /**
      * JWT token
      */
-    token: null,
-    refreshToken: null,
-    user: null,
-    firstName: null,
-    lastName: null,
+    token: sessionStorage.getItem('token') || null,
+    refreshToken: sessionStorage.getItem('refreshToken') || null,
+    firstName: sessionStorage.getItem('firstName') || null,
+    lastName: sessionStorage.getItem('lastName') || null,
   },
 
   getters: {
@@ -31,6 +30,7 @@ export default {
      */
     setToken(state, token) {
       state.token = token;
+      sessionStorage.setItem('token', token);
     },
     /**
      * Set the Refresh token
@@ -40,6 +40,7 @@ export default {
      */
     setRefreshToken(state, token) {
       state.refreshToken = token;
+      sessionStorage.setItem('refreshToken', token);
     },
 
     /**
@@ -48,8 +49,10 @@ export default {
      */
     logout(state) {
       state.token = null;
+      state.refreshToken = null;
       state.firstName = null;
       state.lastName = null;
+      sessionStorage.clear();
     },
 
     /**
@@ -59,7 +62,9 @@ export default {
      */
     setUserName(state, { firstName, lastName }) {
       state.firstName = firstName;
+      sessionStorage.setItem('firstName', firstName);
       state.lastName = lastName;
+      sessionStorage.setItem('lastName', lastName);
     },
   },
 };
