@@ -45,11 +45,12 @@ export default {
      * Remove the login information and effectively log the user out
      * @param {object} state Module state
      */
-    logout(state) {
+    removeAuth(state) {
       state.token = null;
       state.refreshToken = null;
       state.firstName = null;
       state.lastName = null;
+      sessionStorage.clear();
     },
 
     /**
@@ -76,9 +77,9 @@ export default {
       sessionStorage.setItem('lastName', lastName);
       commit('setUserName', { firstName, lastName });
     },
-    logout({ commit }) {
+    removeAuth({ commit }) {
       sessionStorage.clear();
-      commit('logout');
+      commit('removeAuth');
     },
   },
 };

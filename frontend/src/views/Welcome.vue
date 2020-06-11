@@ -13,7 +13,7 @@ export default {
   components: {},
   methods: {
     logout() {
-      this.$store.commit('Auth/logout');
+      this.$store.dispatch('Auth/removeAuth');
       this.$router.push({ name: 'home' });
     },
   },

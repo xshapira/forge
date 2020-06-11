@@ -30,7 +30,7 @@ axios.interceptors.response.use(
     // Logout user if token refresh didn't work or user is disabled
     if (error.config.url.contains('token/refresh')) {
       // will error
-      store.commit('Auth/logout');
+      store.dispatch('Auth/removeAuth');
       router.push({ name: 'root' });
       return Promise.reject(error);
     }
