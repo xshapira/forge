@@ -6,6 +6,12 @@ module.exports = {
       .loader('svgo-loader');
   },
   pluginOptions: {
+    i18n: {
+      locale: 'de',
+      fallbackLocale: 'de',
+      localeDir: 'locales',
+      enableInSFC: false,
+    },
     svgSprite: {
       dir: 'src/assets/icons',
       test: /\.(svg)(\?.*)?$/,
@@ -26,8 +32,8 @@ module.exports = {
   transpileDependencies: ['vuejs-smart-table'],
   configureWebpack: {
     devServer: {
-      // We need this because otherwise Webpack prohibits the connection on forge.docker.test
-      public: 'forge.docker.test',
+      // We need this because otherwise Webpack prohibits the connection
+      public: `${process.env.TRAEFIK_FRONTEND_URL}`,
     },
   },
 };
