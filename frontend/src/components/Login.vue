@@ -1,52 +1,53 @@
 <template>
   <div>
     <h2>{{ $t('login') }}</h2>
-
-    <forge-input
-      v-model.trim="$v.email.$model"
-      class="mt-4"
-      class-input="w-full"
-      :value="email"
-      label="E-Mail"
-      is-block
-      required
-      @blur="$v.email.$touch"
-    >
-      <validation-text v-if="$v.email.$error" class="mt-1">
-        E-Mail is required
-      </validation-text>
-    </forge-input>
-
-    <forge-input
-      v-model.trim.lazy="$v.password.$model"
-      class="w-full mt-4"
-      class-input="w-full"
-      :value="password"
-      label="Password"
-      placeholder="Password"
-      type="password"
-      is-block
-      required
-      @blur="$v.password.$touch"
-    >
-      <validation-text v-if="$v.password.$error" class="mt-1">
-        Password is required
-      </validation-text>
-    </forge-input>
-
-    <span v-if="errorMessage" class="block mt-4 text-red-600">
-      {{ errorMessage }}
-    </span>
-
-    <div class="flex items-center justify-between mt-6">
-      <button
-        class="btn btn--primary"
-        :disabled="$v.$invalid"
-        @click.prevent="doLogin"
+    <form>
+      <forge-input
+        v-model.trim="$v.email.$model"
+        class="mt-4"
+        class-input="w-full"
+        :value="email"
+        label="E-Mail"
+        is-block
+        required
+        @blur="$v.email.$touch"
       >
-        {{ $t('login') }}
-      </button>
-    </div>
+        <validation-text v-if="$v.email.$error" class="mt-1">
+          E-Mail is required
+        </validation-text>
+      </forge-input>
+
+      <forge-input
+        v-model.trim.lazy="$v.password.$model"
+        class="w-full mt-4"
+        class-input="w-full"
+        :value="password"
+        label="Password"
+        placeholder="Password"
+        type="password"
+        is-block
+        required
+        @blur="$v.password.$touch"
+      >
+        <validation-text v-if="$v.password.$error" class="mt-1">
+          Password is required
+        </validation-text>
+      </forge-input>
+
+      <span v-if="errorMessage" class="block mt-4 text-red-600">
+        {{ errorMessage }}
+      </span>
+
+      <div class="flex items-center justify-between mt-6">
+        <button
+          class="btn btn--primary"
+          :disabled="$v.$invalid"
+          @click.prevent="doLogin"
+        >
+          {{ $t('login') }}
+        </button>
+      </div>
+    </form>
   </div>
 </template>
 
