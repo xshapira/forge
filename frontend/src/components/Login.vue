@@ -55,6 +55,7 @@
 <script>
 import ForgeInput from '@/components/Input.vue';
 import ValidationText from '@/components/ValidationText.vue';
+import { mapActions } from 'vuex';
 import { required } from 'vuelidate/lib/validators';
 import { login } from '@/services/auth.js';
 
@@ -79,6 +80,7 @@ export default {
     },
   },
   methods: {
+    ...mapActions('Auth', ['setToken', 'setRefreshToken', 'setUserName']),
     setEmail(value) {
       this.email = value;
       this.$v.email.$touch();
@@ -91,9 +93,9 @@ export default {
       try {
         const loginData = await login(this.email, this.password);
         this.errorMessage = '';
-        this.$store.commit('Auth/setToken', loginData.access);
-        this.$store.commit('Auth/setRefreshToken', loginData.refresh);
-        this.$store.commit('Auth/setUserName', {
+        this.setToken(loginData.access);
+        this.setRefreshToken(loginData.refresh);
+        this.setUserName({
           firstName: loginData.firstName,
           lastName: loginData.lastName,
         });
