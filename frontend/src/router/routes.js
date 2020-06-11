@@ -1,6 +1,6 @@
-import Home from '@/views/Home.vue';
-import LoadingView from '@/views/LoadingView.vue';
-import Welcome from '@/views/Welcome.vue';
+const Home = () => import('@/views/Home.vue');
+const LoadingView = () => import('@/views/LoadingView.vue');
+const Welcome = () => import('@/views/Welcome.vue');
 
 export default [
   {
