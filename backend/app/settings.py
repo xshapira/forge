@@ -30,14 +30,16 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ROOT_URLCONF = 'app.urls'
 WSGI_APPLICATION = 'app.wsgi.application'
 
-STATIC_ROOT = env('STATIC_ROOT', default='/tmp/static/')
+STATIC_ROOT = env('STATIC_ROOT', default='/code/static')
 STATIC_URL = env('STATIC_URL', default='/static/')
-
-MEDIA_ROOT = env('MEDIA_ROOT', default='/tmp/static/media')
+MEDIA_ROOT = env('MEDIA_ROOT', default='/code/media')
 MEDIA_URL = env('MEDIA_URL', default='/media/')
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
 
 LOCALE_PATHS = env.list('LOCALE_PATHS', default=['locale/'])
-
 
 #################
 # I18N SETTINGS #

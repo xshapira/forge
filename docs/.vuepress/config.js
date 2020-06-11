@@ -1,6 +1,7 @@
 module.exports = {
   title: 'Forge',
   description: 'The documentation for Forge template',
+  port: 8081,
   themeConfig: {
     smoothScroll: true,
     lastUpdated: 'Last Updated',
