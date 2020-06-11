@@ -10,7 +10,6 @@
       label="E-Mail"
       is-block
       required
-      @change="setEmail($event.target.value)"
       @blur="$v.email.$touch"
     >
       <validation-text v-if="$v.email.$error" class="mt-1">
@@ -28,7 +27,6 @@
       type="password"
       is-block
       required
-      @change="setPassword($event.target.value)"
       @blur="$v.password.$touch"
     >
       <validation-text v-if="$v.password.$error" class="mt-1">
@@ -81,14 +79,6 @@ export default {
   },
   methods: {
     ...mapActions('Auth', ['setToken', 'setRefreshToken', 'setUserName']),
-    setEmail(value) {
-      this.email = value;
-      this.$v.email.$touch();
-    },
-    setPassword(value) {
-      this.password = value;
-      this.$v.password.$touch();
-    },
     async doLogin() {
       try {
         const loginData = await login(this.email, this.password);
