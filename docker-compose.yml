@@ -14,9 +14,6 @@ services:
   backend:
     build: .
     command: sh -c 'while true; do ./manage.py runserver 0.0.0.0:8000; sleep 1; done'
-    environment:
-      INITIAL: "${INITIAL:-0}"
-      DJANGO_ALLOWED_HOSTS: ${TRAEFIK_BACKEND_URL}
     volumes:
       - ./backend/.venv:/venv
       - ./backend:/code
@@ -28,7 +25,7 @@ services:
     tty: true
     labels:
       - "traefik.enable=true"
-      - "traefik.frontend.rule=Host:${TRAEFIK_BACKEND_URL}"
+      - "traefik.frontend.rule=Host:${BACKEND_URL}"
       - 'traefik.docker.network=pontsun'
     networks:
       - default
@@ -47,7 +44,7 @@ services:
     tty: true
     labels:
       - 'traefik.enable=true'
-      - 'traefik.frontend.rule=Host:${TRAEFIK_FRONTEND_URL}'
+      - 'traefik.frontend.rule=Host:${FRONTEND_URL}'
       - 'traefik.docker.network=pontsun'
     networks:
       - default
@@ -63,13 +60,13 @@ services:
     tty: true
     labels:
       - 'traefik.enable=true'
-      - 'traefik.frontend.rule=Host:${TRAEFIK_DOCS_URL}'
+      - 'traefik.frontend.rule=Host:${DOCS_URL}'
       - 'traefik.docker.network=pontsun'
     networks:
       - default
       - pontsun
     ports:
-      - 8080
+      - 8081
 
   styleguide:
     build: ./frontend
@@ -80,7 +77,7 @@ services:
     tty: true
     labels:
       - 'traefik.enable=true'
-      - 'traefik.frontend.rule=Host:${TRAEFIK_STYLEGUIDE_URL}'
+      - 'traefik.frontend.rule=Host:${STYLEGUIDE_URL}'
       - 'traefik.docker.network=pontsun'
     networks:
       - default
@@ -96,7 +93,7 @@ services:
       - .env
     labels:
       - "traefik.enable=true"
-      - "traefik.frontend.rule=Host:${TRAEFIK_PGADMIN_URL}"
+      - "traefik.frontend.rule=Host:${PGADMIN_URL}"
       - 'traefik.docker.network=pontsun'
     networks:
       - default

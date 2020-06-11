@@ -14,11 +14,11 @@ Once you have Ponstun up and running you can start the Forge docker containers.
     - If you are all set up, reset the install flag `INITIAL=0`
 
 All your services are now available on the urls you added in .env:
-* The vue website frontend on: TRAEFIK_FRONTEND_URL
-* The django rest api on: TRAEFIK_BACKEND_URL
-* The vue style guide on: TRAEFIK_STYLEGUIDE_URL
-* The documentation on: TRAEFIK_DOCS_URL
-* PGAdmin on: TRAEFIK_PGADMIN_URL
+* The vue website frontend on: FRONTEND_URL
+* The django rest api on: BACKEND_URL
+* The vue style guide on: STYLEGUIDE_URL
+* The documentation on: DOCS_URL
+* PGAdmin on: PGADMIN_URL
  
 ## Add git config                                                                
 ```                                                                             
