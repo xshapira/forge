@@ -13,7 +13,7 @@
             >
               Loading
             </router-link>
-            <div v-if="isLoggedIn">{{ firstName }} {{ lastName }}</div>
+            <div v-if="isLoggedIn">{{ getName }}</div>
           </div>
         </div>
       </header>
@@ -43,6 +43,9 @@ export default {
   computed: {
     ...mapState('Auth', ['firstName', 'lastName', 'refreshToken']),
     ...mapGetters('Auth', ['isLoggedIn']),
+    getName() {
+      return this.firstName + ' ' + this.lastName;
+    },
   },
 };
 </script>
