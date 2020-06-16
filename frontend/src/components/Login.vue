@@ -13,7 +13,7 @@
         @blur="$v.email.$touch"
       >
         <validation-text v-if="$v.email.$error" class="mt-1">
-          E-Mail is required
+          {{ $t('email_required') }}
         </validation-text>
       </forge-input>
 
@@ -22,15 +22,14 @@
         class="w-full mt-4"
         class-input="w-full"
         :value="password"
-        label="Password"
-        placeholder="Password"
+        :label="$t('password')"
         type="password"
         is-block
         required
         @blur="$v.password.$touch"
       >
         <validation-text v-if="$v.password.$error" class="mt-1">
-          Password is required
+          {{ $t('password_required') }}
         </validation-text>
       </forge-input>
 

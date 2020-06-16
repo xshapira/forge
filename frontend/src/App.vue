@@ -5,13 +5,7 @@
         <div class="container">
           <div class="flex justify-between">
             <router-link class="text-lg font-semibold no-underline" to="/">
-              Forge
-            </router-link>
-            <router-link
-              class="text-lg font-semibold no-underline"
-              to="/loading"
-            >
-              Loading
+              {{ $t('project_name') }}
             </router-link>
             <div v-if="isLoggedIn">{{ getName }}</div>
           </div>
@@ -24,7 +18,7 @@
 
     <footer class="py-6 bg-gray-100 app-footer">
       <div class="container">
-        <p class="text-lg font-semibold">App footer</p>
+        <p class="text-lg font-semibold">{{ $t('footer_text') }}</p>
       </div>
     </footer>
 
