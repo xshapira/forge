@@ -1,10 +1,18 @@
 {
-  "project_name":"Forge",
-  "login":"Login",
-  "dashboard":"Dashboard",
-  "password":"Passwort",
-  "email_required":"Die E-Mail-Adresse ist ein Pflichtfeld",
-  "password_required":"Geben Sie bitte Ihr Passwort ein",
-  "logout":"logout",
-  "footer_text":"forge by @liip"
+  "general": {
+    "projectName":"Forge",
+    "footerText":"powered by @Liip",
+    "logout":"Abmelden"
+  },
+  "login": {
+    "title":"Login",
+    "error":"Die Anmeldedaten sind nicht korrekt. Versuchen Sie es nochmals.",
+    "password":"Passwort",
+    "emailRequired":"Die E-Mail-Adresse ist ein Pflichtfeld",
+    "passwordRequired":"Geben Sie bitte Ihr Passwort ein",
+    "submitButtonText":"Anmelden"
+  },
+  "dashboard": {
+    "title":"Dashboard"
+  }
 }
