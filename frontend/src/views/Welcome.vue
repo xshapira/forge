@@ -1,8 +1,8 @@
 <template>
   <div class="container py-24 container--sm">
-    <h1>You have logged in!!!</h1>
+    <h1>{{ $t('dashboard.title') }}</h1>
     <button @click="logout">
-      {{ $t('logout') }}
+      {{ $t('general.logout') }}
     </button>
   </div>
 </template>

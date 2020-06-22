@@ -1,7 +1,11 @@
 <template>
   <div>
-    <h2>{{ $t('login') }}</h2>
+    <h2>{{ $t('login.title') }}</h2>
     <form>
+      <span v-if="errorMessage" class="block mt-4 text-red-600">
+        {{ errorMessage }}
+      </span>
+
       <forge-input
         v-model.trim="$v.email.$model"
         class="mt-4"
@@ -13,7 +17,7 @@
         @blur="$v.email.$touch"
       >
         <validation-text v-if="$v.email.$error" class="mt-1">
-          E-Mail is required
+          {{ $t('login.emailRequired') }}
         </validation-text>
       </forge-input>
 
@@ -22,21 +26,16 @@
         class="w-full mt-4"
         class-input="w-full"
         :value="password"
-        label="Password"
-        placeholder="Password"
+        :label="$t('login.password')"
         type="password"
         is-block
         required
         @blur="$v.password.$touch"
       >
         <validation-text v-if="$v.password.$error" class="mt-1">
-          Password is required
+          {{ $t('login.passwordRequired') }}
         </validation-text>
       </forge-input>
-
-      <span v-if="errorMessage" class="block mt-4 text-red-600">
-        {{ errorMessage }}
-      </span>
 
       <div class="flex items-center justify-between mt-6">
         <button
@@ -44,7 +43,7 @@
           :disabled="$v.$invalid"
           @click.prevent="doLogin"
         >
-          {{ $t('login') }}
+          {{ $t('login.submitButtonText') }}
         </button>
       </div>
     </form>
@@ -92,7 +91,7 @@ export default {
         });
         this.$router.push({ name: 'welcome' });
       } catch (e) {
-        this.errorMessage = e.response.data.detail;
+        this.errorMessage = this.$t('login.error');
       }
     },
   },

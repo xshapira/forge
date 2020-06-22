@@ -33,7 +33,7 @@ module.exports = {
   configureWebpack: {
     devServer: {
       // We need this because otherwise Webpack prohibits the connection
-      public: `${process.env.TRAEFIK_FRONTEND_URL}`,
+      public: `${process.env.FRONTEND_URL}`,
     },
   },
 };
