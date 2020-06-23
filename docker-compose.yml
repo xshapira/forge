@@ -17,6 +17,8 @@ services:
     volumes:
       - ./backend/.venv:/venv
       - ./backend:/code
+    environment:
+        - INITIAL
     env_file:
       - .env
     depends_on:
