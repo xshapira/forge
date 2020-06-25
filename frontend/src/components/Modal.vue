@@ -135,6 +135,8 @@ export default {
       if (opened) {
         this.saveLastActiveFocus();
         this.bodyLock();
+      } else {
+        this.bodyUnlock();
       }
     },
   },
