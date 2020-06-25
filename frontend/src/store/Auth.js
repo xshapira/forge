@@ -30,6 +30,7 @@ export default {
      */
     setToken(state, token) {
       state.token = token;
+      sessionStorage.setItem('token', token);
     },
     /**
      * Set the Refresh token
@@ -39,6 +40,7 @@ export default {
      */
     setRefreshToken(state, token) {
       state.refreshToken = token;
+      sessionStorage.setItem('refreshToken', token);
     },
 
     /**
@@ -61,24 +63,21 @@ export default {
     setUserName(state, { firstName, lastName }) {
       state.firstName = firstName;
       state.lastName = lastName;
+      sessionStorage.setItem('firstName', firstName);
+      sessionStorage.setItem('lastName', lastName);
     },
   },
   actions: {
     setToken({ commit }, token) {
-      sessionStorage.setItem('token', token);
       commit('setToken', token);
     },
     setRefreshToken({ commit }, token) {
-      sessionStorage.setItem('refreshToken', token);
       commit('setRefreshToken', token);
     },
     setUserName({ commit }, { firstName, lastName }) {
-      sessionStorage.setItem('firstName', firstName);
-      sessionStorage.setItem('lastName', lastName);
       commit('setUserName', { firstName, lastName });
     },
     removeAuth({ commit }) {
-      sessionStorage.clear();
       commit('removeAuth');
     },
   },
