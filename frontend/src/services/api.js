@@ -32,7 +32,7 @@ userApi.interceptors.response.use(
     }
 
     // Logout user if token refresh didn't work or user is disabled
-    if (error.config.url.indexOf('token/refresh') !== -1) {
+    if (error.config.url.includes('token/refresh')) {
       // will error
       store.dispatch('Auth/removeAuth');
       router.push({ name: 'root' });
