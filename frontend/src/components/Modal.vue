@@ -136,6 +136,7 @@ export default {
         this.saveLastActiveFocus();
         this.bodyLock();
       } else {
+        this.refocusLastActive();
         this.bodyUnlock();
       }
     },
