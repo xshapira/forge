@@ -30,7 +30,6 @@ export default {
      */
     setToken(state, token) {
       state.token = token;
-      sessionStorage.setItem('token', token);
     },
     /**
      * Set the Refresh token
@@ -40,7 +39,6 @@ export default {
      */
     setRefreshToken(state, token) {
       state.refreshToken = token;
-      sessionStorage.setItem('refreshToken', token);
     },
 
     /**
@@ -63,8 +61,6 @@ export default {
     setUserName(state, { firstName, lastName }) {
       state.firstName = firstName;
       state.lastName = lastName;
-      sessionStorage.setItem('firstName', firstName);
-      sessionStorage.setItem('lastName', lastName);
     },
   },
   actions: {
