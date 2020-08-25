@@ -145,7 +145,7 @@ export default {
 
   beforeDestroy() {
     window.removeEventListener('keyup', this.handleKeyEvent);
-    bodyUnlock();
+    this.bodyUnlock();
   },
 
   methods: {
