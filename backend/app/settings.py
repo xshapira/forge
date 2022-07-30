@@ -9,6 +9,7 @@ Django settings for liip forge project.
 
 """
 
+
 import os
 import environ
 from datetime import timedelta
@@ -67,11 +68,7 @@ AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator'},
 ]
 
-################
-# APP SETTINGS #
-################
-database_url = env(env.DEFAULT_DATABASE_ENV, default=None)
-if database_url:
+if database_url := env(env.DEFAULT_DATABASE_ENV, default=None):
     default_database = env.db_url_config(database_url)
     DATABASES = {
         'default': default_database,
